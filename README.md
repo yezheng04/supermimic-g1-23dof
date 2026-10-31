@@ -37,7 +37,7 @@ bash scripts/setup_training_host.sh
 先按 [数据准备](docs/data.md) 生成训练 manifest 和缓存，再启动正式训练：
 
 ```bash
-wandb login
+.venv/bin/wandb login
 bash scripts/train_bones_2gpu.sh
 
 # 在另一个终端记录 W&B；entity 改为自己的账号或团队。
