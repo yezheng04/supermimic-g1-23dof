@@ -46,13 +46,18 @@ def main(a):
     ff=imageio_ffmpeg.get_ffmpeg_exe();catalog=[]
     # Each mode of a motion uses the same baseline camera path, including failed branches.
     cameras={}
-    for i,row in enumerate(report['runs'][:8]):
+    for i,row in enumerate(report['runs']):
+        if row['mode']!='on':continue
         n=row['reference_frames'];positions=d['states'][:n,i,:3]
         target=positions[0].copy();targets=[]
         for pos in positions:
-            target=.97*target+.03*pos;targets.append(target.copy())
-        q=d['states'][0,i,3:7];yaw=Rotation.from_quat(q[[1,2,3,0]]).as_euler('xyz')[2]*180/np.pi
-        cameras[row['slug']]=(np.array(targets),yaw+35)
+            target=.8*target+.2*pos;targets.append(target.copy())
+        quats=d['states'][:n,i,3:7]
+        yaw=np.unwrap(Rotation.from_quat(quats[:,[1,2,3,0]]).as_euler('xyz')[:,2])*180/np.pi
+        angles=[];angle=yaw[0]
+        for value in yaw:
+            angle=.97*angle+.03*value;angles.append(angle+215)
+        cameras[row['slug']]=(np.array(targets),angles,d['states'][:n,i,30:33])
     def frame(i,t,kind):
         row=report['runs'][i];q=d['reference'][t,i] if kind=='reference' else d['states'][t,i,:30]
         data.qpos[:30]=q
@@ -61,9 +66,10 @@ def main(a):
             visible=kind=='future' and t<row['steps'] and t+step<row['reference_frames']
             data.qpos[offset:offset+30]=d['future'][t,i,k] if visible else q
             if not visible:data.qpos[offset:offset+3]=[0,0,-50]
-        targets,az=cameras[row['slug']];cam.azimuth=az
+        targets,az,velocities=cameras[row['slug']];cam.azimuth=az[t]
         cam.lookat[:]=[targets[t,0],targets[t,1],.6]
-        cam.distance=3.1 if kind=='future' else 2.65
+        cam.distance=3.6 if kind=='future' else 2.65
+        if kind=='future':cam.lookat[:2]+=.25*velocities[t,:2]
         if row['slug'] in ('crawl','pushup','roll'):
             cam.lookat[2]=.38;cam.distance=2.65;cam.elevation=-13
         else:cam.elevation=-9
@@ -82,8 +88,10 @@ def main(a):
         return renderer.render()
     try:
         if a.preview:
-            for i,kind,t in [(2,'actual',160),(1,'future',160),(4,'actual',160),(6,'reference',160)]:
-                Image.fromarray(frame(i,t,kind)).save(out/f'preview-{i}-{kind}.jpg')
+            for slug,kind in [('walk','actual'),('jog','future'),('jump','actual'),('dance','actual')]:
+                i=next(i for i,r in enumerate(report['runs']) if r['slug']==slug and r['mode']=='on')
+                t=min(160,report['runs'][i]['reference_frames']-1)
+                Image.fromarray(frame(i,t,kind)).save(out/f'preview-{slug}-{kind}.jpg')
             return
         tasks=[]
         for i,row in enumerate(report['runs']):
@@ -105,7 +113,8 @@ def main(a):
             print(f'{name}: {n} frames, rendered in {time.monotonic()-start:.1f}s',flush=True)
         # The hero is selected excerpts of real policy execution, separated by hard cuts.
         # Each source is a newly recorded complete motion available in the gallery.
-        cuts=[('dance',.6,3.),('jump',1.8,3.),('crawl',1.,2.4),('walk',.5,2.4)]
+        third='kick' if (out/'motion-kick.mp4').exists() else 'crawl'
+        cuts=[('dance',.6,2.4),('jump',.8,3.),(third,.3,2.4),('walk',.5,2.4)]
         parts=[]
         for k,(slug,start,length) in enumerate(cuts):
             part=out/f'.hero-{k}.mp4';parts.append(part)
@@ -116,7 +125,7 @@ def main(a):
             '-movflags','+faststart',str(out/'hero.mp4')],check=True)
         subprocess.run([ff,'-y','-loglevel','error','-ss','1','-i',str(out/'hero.mp4'),'-frames:v','1',str(out/'hero.jpg')],check=True)
         for p in parts+[listing]:p.unlink()
-        (out/'catalog.json').write_text(json.dumps(dict(recording=report,clips=catalog,hero_cuts=cuts),ensure_ascii=False,indent=2)+'\n')
+        (out/'catalog.json').write_text(json.dumps(dict(recording=report,clips=catalog,hero_cuts=cuts,camera={'view':'front-quarter','heading_offset_degrees':215,'position_smoothing':.8,'future_lookahead_seconds':.25}),ensure_ascii=False,indent=2)+'\n')
     finally:renderer.close()
 
 

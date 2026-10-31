@@ -1,0 +1,26 @@
+{
+  "fps": 50,
+  "normal_clips_completed": 6,
+  "first_predicted_action_max_error": 0.002860546112060547,
+  "shared_prefix": [
+    {
+      "id": "jump-hold",
+      "max_prefix_state_error": 0.0
+    },
+    {
+      "id": "jump-slip",
+      "max_prefix_state_error": 0.0
+    },
+    {
+      "id": "jog-hold",
+      "max_prefix_state_error": 0.0
+    },
+    {
+      "id": "jog-slip",
+      "max_prefix_state_error": 0.0
+    }
+  ],
+  "walk_mean_forward_speed_m_s": 0.7448269128799438,
+  "hold_action_and_friction_checked": true,
+  "finite_and_terminal_freeze": true
+}

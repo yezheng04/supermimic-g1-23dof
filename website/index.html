@@ -1,42 +1,459 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff">
-<title>SuperMimic · G1 23DoF</title><meta name="description" content="原生 23DoF G1 的 SuperMimic 独立复现。观看重新录制的仿真动作，探索世界模型预测与完整片段评测。">
-<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
-</head>
-<body>
-<a class="skip" href="#main">跳转至正文</a>
-<header class="nav"><a class="brand" href="#top">G1 <span>SuperMimic</span></a><nav aria-label="主导航"><a href="#motions">动作</a><a href="#world-model">世界模型</a><a href="#results">评测</a><a class="nav-code" href="https://github.com/yezheng04/supermimic-g1-23dof" target="_blank" rel="noopener">GitHub</a></nav></header>
-<main id="main">
-<section id="top" class="hero wrap">
-<p class="project-name">SuperMimic / Native 23DoF</p>
-<h1>一个策略，<br>驱动 23 个关节。</h1>
-<p class="hero-intro">从人体动作到全身控制，<br class="mobile-br">通过一个可微世界模型学习。</p>
-<p class="hero-context">原生 G1 独立复现 · MuJoCo Warp 仿真</p>
-<div class="hero-links"><a href="#motions">观看演示</a><a href="https://arxiv.org/abs/2610.28480" target="_blank" rel="noopener">原论文 <span aria-hidden="true">↗</span></a></div>
-<div class="hero-stage"><video id="hero-video" muted playsinline preload="metadata" poster="media/hero.jpg" aria-label="G1 街舞、跳跃、爬行和行走的策略执行剪辑"><source src="media/hero.mp4" type="video/mp4"></video><button id="hero-play" class="round-button" aria-label="播放首页视频">▶</button></div>
-<p class="media-footnote">80k checkpoint 的新录制片段。全部为仿真，非实机。</p>
-</section>
-<section id="motions" class="band section">
-<div class="wrap"><div class="section-heading"><h2>看它动起来。</h2><p>同一个策略，六种动作。<br>每个片段都从参考首帧开始执行。</p></div>
-<div class="motion-tabs" role="group" aria-label="选择动作"><button data-motion="walk" aria-pressed="true">行走</button><button data-motion="jog" aria-pressed="false">慢跑</button><button data-motion="jump" aria-pressed="false">跳跃</button><button data-motion="dance" aria-pressed="false">街舞</button><button data-motion="pushup" aria-pressed="false">俯卧撑</button><button data-motion="crawl" aria-pressed="false">爬行</button></div>
-<div class="motion-stage"><video id="motion-video" playsinline muted preload="metadata" poster="media/motion-walk.jpg" aria-label="行走完整仿真片段"><source src="media/motion-walk.mp4" type="video/mp4"></video><div class="stage-corner">策略执行 <span id="motion-status"></span></div></div>
-<div class="transport"><button id="motion-play" class="round-button" aria-label="播放动作">▶</button><span id="motion-label">行走</span><input id="motion-time" type="range" min="0" max="5.56" step="0.02" value="0" aria-label="动作播放时间"><output id="motion-clock">0.00 / 5.56 s</output><label class="speed-label"><span class="sr">播放速度</span><select id="motion-speed" aria-label="动作播放速度"><option value="0.5">0.5×</option><option value="1" selected>1×</option></select></label></div>
-<p class="motion-caption" id="motion-caption">正在加载录制信息。</p>
-</div></section>
-<section id="world-model" class="section">
-<div class="wrap"><div class="section-heading"><h2>再看近一点。</h2><p>黑白机器人在仿真中行动。<br>蓝色姿态，是世界模型预测的未来。</p></div>
-<div class="world-selector"><label>动作 <select id="wm-motion"><option value="jog">慢跑</option><option value="jump">跳跃</option></select></label><span>32 步预测 · 0.64 秒</span></div>
-<div class="world-layout"><div class="mode-list" role="group" aria-label="世界模型演示模式"><button data-mode="on" aria-pressed="true"><span>策略执行</span><small>策略在预测状态上继续计算动作。</small></button><button data-mode="hold" aria-pressed="false"><span>保持动作</span><small>2.00 秒后停止更新动作，PD 仍工作。</small></button><button data-mode="slip" aria-pressed="false"><span>低摩擦</span><small>2.00 秒后足部摩擦从 1.0 降至 0.3。</small></button><p id="wm-description">每一帧从当前仿真状态重新预测。四个蓝色姿态依次对应未来 0.16、0.32、0.48、0.64 秒。</p></div>
-<div class="world-stage"><div class="legend"><span><i class="sim-dot"></i>仿真</span><span><i class="wm-dot"></i>世界模型</span></div><video id="wm-video" playsinline muted preload="metadata" poster="media/wm-jog-on.jpg" aria-label="慢跑策略执行模式的未来预测"><source src="media/wm-jog-on.mp4" type="video/mp4"></video><div class="world-readout"><span id="wm-frame">Frame 0 / 336</span><span id="wm-status" aria-live="polite"></span></div></div></div>
-<div class="wm-transport"><div class="wm-time-label"><strong id="wm-title">慢跑</strong><output id="wm-clock">0.00 s</output><button id="wm-play" class="round-button" aria-label="播放世界模型演示">▶</button></div><div class="timeline"><div id="wm-event" hidden><span id="wm-event-label">干预发生</span></div><input id="wm-time" type="range" min="0" max="6.72" step="0.02" value="0" aria-label="世界模型播放时间"><div class="timeline-ends"><span>0 s</span><span id="wm-end">6.72 s</span></div></div><button id="wm-step" class="text-button" aria-label="世界模型前进一帧">下一帧</button></div>
-<p class="fine-print">切换模式保留同一时刻。预测只使用当时已知的状态、历史和摩擦，不读取未来仿真状态。触发终止后机器人冻结，预测残影停止。</p>
-</div></section>
-<section class="method band section" id="method"><div class="wrap"><h2>一个循环，<br>两个学习者。</h2><div class="learning-loop"><div><h3>仿真采样</h3><p>MuJoCo Warp 收集真实物理转换。</p></div><span aria-hidden="true">→</span><div><h3>学习动力学</h3><p>世界模型学习连续 8 步状态变化。</p></div><span aria-hidden="true">→</span><div><h3>在模型中优化策略</h3><p>32 步 BPTT 与末端价值估计。</p></div></div><p class="method-note">梯度穿过学习到的世界模型。物理仿真器提供训练数据。</p><div class="specs"><div><strong>23</strong><span>原生关节自由度</span></div><div><strong>50 Hz</strong><span>参考与控制频率</span></div><div><strong>129,477</strong><span>重定向训练动作</span></div><div><strong>2 × 96 GB</strong><span>RTX PRO 6000 训练设备</span></div></div><a class="inline-link" href="https://github.com/yezheng04/supermimic-g1-23dof/blob/main/docs/cuboileo_adaptation.md" target="_blank" rel="noopener">查看网络与参数对应</a></div></section>
-<section id="failures" class="section wrap"><div class="section-heading"><h2>参考到了，<br>策略还没有。</h2><p>同一时间、同一相机，比较参考与执行。<br>保留失败的全过程。</p></div><div class="motion-tabs" role="group" aria-label="选择失败动作"><button data-failure="flip" aria-pressed="true">360° 翻转</button><button data-failure="roll" aria-pressed="false">侧滚</button></div><div class="comparison"><div><h3>重定向参考</h3><video id="ref-video" muted playsinline preload="metadata" poster="media/reference-flip.jpg" aria-label="翻转重定向参考"><source src="media/reference-flip.mp4" type="video/mp4"></video></div><div><h3>80k 策略执行 <span id="failure-status"></span></h3><video id="failure-video" muted playsinline preload="metadata" poster="media/motion-flip.jpg" aria-label="翻转实际策略执行"><source src="media/motion-flip.mp4" type="video/mp4"></video></div></div><div class="transport"><button id="failure-play" class="round-button" aria-label="播放参考与策略对比">▶</button><input id="failure-time" type="range" min="0" max="6.94" step="0.02" value="0" aria-label="参考与策略对比时间"><output id="failure-clock">0.00 / 6.94 s</output></div><p class="fine-print" id="failure-note">触发终止后，策略机器人冻结在失败状态，参考继续播放；这不代表策略完成了动作。</p></section>
-<section id="results" class="band section"><div class="wrap"><div class="section-heading"><h2>把进展放进数据里。</h2><p>同一组 2,000 条主样本，8 个 checkpoint。<br>训练更久，并不总是跟踪更好。</p></div><div class="results-control"><label>Checkpoint <select id="checkpoint"><option value="80000">80k</option><option value="104000">104k</option><option value="112000">112k</option><option value="120000">120k</option><option value="128000">128k</option><option value="140000">140k</option><option value="152000">152k</option><option value="156000">156k</option></select></label><a class="inline-link" href="data/checkpoints.json" download>下载评测摘要</a></div><div class="result-grid"><div class="chart-panel"><h3>主样本平均归一化回报</h3><svg id="return-chart" viewBox="0 0 700 300" role="img" aria-label="8 个 checkpoint 的主样本回报；可通过选择框查看详细数值"></svg><p>完整参考时长归一化 · 越高越好</p></div><div class="metric-panel" aria-live="polite"><span id="selected-label">80k checkpoint</span><strong id="metric-return">0.8688</strong><span>主样本平均回报</span><div class="metric-pair"><div><b id="metric-uniform">4 / 2,000</b><span>主样本失败</span></div><div><b id="metric-challenge">135 / 462</b><span>困难动作失败</span></div></div><p id="metric-note">80k 是本次主样本回报最高的保存点。</p></div></div><div class="table-scroll"><table><caption>各类动作失败数 / 评测数量 · <span id="table-checkpoint">80k</span></caption><thead><tr><th>俯卧撑</th><th>爬行</th><th>Inchworm</th><th>躺卧恢复</th><th>翻转</th><th>侧滚</th></tr></thead><tbody><tr id="group-row"><td>0 / 72</td><td>0 / 128</td><td>19 / 22</td><td>37 / 54</td><td>54 / 54</td><td>21 / 21</td></tr></tbody></table></div><p class="fine-print">评测快照：2026-10-31。2,000 条主样本与 462 条困难动作重叠 7 条，共 2,455 条不同训练动作；衡量训练覆盖，不是未见动作泛化，也不是全库结果。演示新录于 2026-11-01，不替代这组统计。</p></div></section>
-<section class="section wrap questions"><h2>关于这个复现。</h2><div><details><summary>页面是在浏览器里运行策略吗？</summary><p>目前是重新录制的 50fps 仿真视频，支持逐帧查看、时间轴与同步模式切换。没有浏览器内策略推理，也没有实机演示。</p></details><details><summary>与官方 Demo 的制作方式相同吗？</summary><p>参考了官方白色舞台、未来姿态残影和同步视频控件。我们的素材由 23DoF 模型重新仿真和渲染。官方离线录制脚本及精确相机参数未从公开页面获得；“保持动作”是本地明确实现的干预，不等同于关闭电机。</p></details><details><summary>翻转与侧滚成功了吗？</summary><p>尚未成功。固定评测的 8 个 checkpoint 全部失败于 54 条翻转和 21 条侧滚。失败可能涉及参考重定向、机器人能力与策略，需要逐动作诊断。</p></details><details><summary>归一化回报与成功率有什么区别？</summary><p>每条动作奖励总和除以 0.1 ×（参考帧数 − 1），再对动作等权平均。提前终止不缩短分母。回报衡量完整时长下的跟踪质量，不是成功率。</p></details><details><summary>当前训练状态如何？</summary><p>这次长训练在约 159,964 次迭代出现 Critic 非有限梯度而停止，最新完整保存点为 156k。页面保留诊断结果，不表示训练已稳定收敛。</p></details></div></section>
-<section class="closing wrap"><h2>继续探索。</h2><p>代码、参数与记录，都在仓库里。</p><a class="primary-link" href="https://github.com/yezheng04/supermimic-g1-23dof" target="_blank" rel="noopener">打开 GitHub</a><a class="inline-link" href="https://github.com/yezheng04/supermimic-g1-23dof/blob/main/docs/demo_design_v2.md" target="_blank" rel="noopener">查看录制协议</a></section>
-</main><footer class="wrap"><span>G1 23DoF · 独立研究复现</span><div><a href="https://supermimic.github.io" target="_blank" rel="noopener">SuperMimic</a><a href="https://github.com/CuboiLeo/SuperMimic-Reproduced" target="_blank" rel="noopener">CuboiLeo</a><a href="https://github.com/NVIDIA/soma-retargeter" target="_blank" rel="noopener">SOMA</a></div></footer><p id="load-error" class="error-message" hidden role="alert">演示数据未能加载，请刷新页面重试，或查看 GitHub Release 中的视频。</p><noscript><p class="wrap">请启用 JavaScript 使用播放器；完整视频也可在 GitHub Release 下载。</p></noscript>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>SuperMimic · G1 23DoF</title>
+    <meta
+      name="description"
+      content="原生 23DoF G1 的 SuperMimic 独立复现。观看重新录制的仿真动作，探索世界模型预测与完整片段评测。"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">跳转至正文</a>
+    <header class="nav">
+      <a class="brand" href="#top">G1 <span>SuperMimic</span></a>
+      <nav aria-label="主导航">
+        <a href="#motions">动作</a><a href="#web-demo">Web demo</a
+        ><a href="#world-model">世界模型</a><a href="#results">评测</a
+        ><a
+          class="nav-code"
+          href="https://github.com/yezheng04/supermimic-g1-23dof"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </nav>
+    </header>
+    <main id="main">
+      <section id="top" class="hero wrap">
+        <p class="project-name">SuperMimic / Native 23DoF</p>
+        <h1>一个策略，<br />驱动 23 个关节。</h1>
+        <p class="hero-intro">
+          从人体动作到全身控制，<br
+            class="mobile-br"
+          />通过一个可微世界模型学习。
+        </p>
+        <p class="hero-context">原生 G1 独立复现 · MuJoCo Warp 仿真</p>
+        <div class="hero-links">
+          <a href="#motions">观看演示</a
+          ><a
+            href="https://arxiv.org/abs/2610.28480"
+            target="_blank"
+            rel="noopener"
+            >原论文 <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="hero-stage">
+          <video
+            id="hero-video"
+            muted
+            playsinline
+            preload="metadata"
+            poster="media/hero.jpg"
+            aria-label="G1 街舞、蛙跳、踢腿和前进行走的策略执行剪辑"
+          >
+            <source src="media/hero.mp4" type="video/mp4" /></video
+          ><button
+            id="hero-play"
+            class="round-button"
+            aria-label="播放首页视频"
+          >
+            ▶
+          </button>
+        </div>
+        <p class="media-footnote">
+          80k checkpoint 的新录制片段。全部为仿真，非实机。
+        </p>
+      </section>
+      <section id="motions" class="band section">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>看它动起来。</h2>
+            <p>同一个策略，六种动作。<br />每个片段都从参考首帧开始执行。</p>
+          </div>
+          <div class="motion-tabs" role="group" aria-label="选择动作">
+            <button data-motion="walk" aria-pressed="true">向前行走</button
+            ><button data-motion="jog" aria-pressed="false">慢跑</button
+            ><button data-motion="jump" aria-pressed="false">蛙跳</button
+            ><button data-motion="dance" aria-pressed="false">街舞</button
+            ><button data-motion="kick" aria-pressed="false">踢腿</button
+            ><button data-motion="punch" aria-pressed="false">出拳</button>
+          </div>
+          <div class="motion-stage">
+            <video
+              id="motion-video"
+              playsinline
+              muted
+              preload="metadata"
+              poster="media/motion-walk.jpg"
+              aria-label="行走完整仿真片段"
+            >
+              <source src="media/motion-walk.mp4" type="video/mp4" />
+            </video>
+            <div class="stage-corner">
+              策略执行 <span id="motion-status"></span>
+            </div>
+          </div>
+          <div class="transport">
+            <button id="motion-play" class="round-button" aria-label="播放动作">
+              ▶</button
+            ><span id="motion-label">行走</span
+            ><input
+              id="motion-time"
+              type="range"
+              min="0"
+              max="5.56"
+              step="0.02"
+              value="0"
+              aria-label="动作播放时间"
+            /><output id="motion-clock">0.00 / 5.56 s</output
+            ><label class="speed-label"
+              ><span class="sr">播放速度</span
+              ><select id="motion-speed" aria-label="动作播放速度">
+                <option value="0.5">0.5×</option>
+                <option value="1" selected>1×</option>
+              </select></label
+            >
+          </div>
+          <p class="motion-caption" id="motion-caption">正在加载录制信息。</p>
+        </div>
+      </section>
+      <section id="web-demo" class="section wrap">
+        <div class="section-heading">
+          <h2>在浏览器里，<br />运行策略。</h2>
+          <p>选择动作与策略。<br />从正面、侧面，或者任何你想看的角度。</p>
+        </div>
+        <div class="live-links">
+          <span>六类精选动作 · 80k / 104k 策略</span
+          ><a href="demo/" target="_blank" rel="noopener">在新窗口打开 ↗</a>
+        </div>
+        <div class="live-slot" id="live-slot">
+          <div class="live-cover" id="live-cover">
+            <img
+              src="media/motion-walk.jpg"
+              alt="正面视角的原生23自由度G1"
+            /><button id="live-start">
+              启动 Web demo <span aria-hidden="true">▶</span>
+            </button>
+            <p>在你的设备上计算 · 首次加载需要下载模型资源</p>
+          </div>
+        </div>
+        <div class="live-under">
+          <p>
+            拖动画面旋转视角，滚轮缩放。运行过程中可暂停、重置或轻推机器人。
+          </p>
+          <button id="live-stop" hidden>关闭 Demo</button>
+        </div>
+      </section>
+      <section id="world-model" class="section">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>再看近一点。</h2>
+            <p>
+              黑白机器人在仿真中行动。<br />蓝色姿态，是世界模型预测的未来。
+            </p>
+          </div>
+          <div class="world-selector">
+            <label
+              >动作
+              <select id="wm-motion">
+                <option value="jog">慢跑</option>
+                <option value="jump">蛙跳</option>
+              </select></label
+            ><span>32 步预测 · 0.64 秒</span>
+          </div>
+          <div class="world-layout">
+            <div class="mode-list" role="group" aria-label="世界模型演示模式">
+              <button data-mode="on" aria-pressed="true">
+                <span>策略执行</span
+                ><small>策略在预测状态上继续计算动作。</small></button
+              ><button data-mode="hold" aria-pressed="false">
+                <span>保持动作</span
+                ><small>2.00 秒后停止更新动作，PD 仍工作。</small></button
+              ><button data-mode="slip" aria-pressed="false">
+                <span>低摩擦</span
+                ><small>2.00 秒后足部摩擦从 1.0 降至 0.3。</small>
+              </button>
+              <p id="wm-description">
+                每一帧从当前仿真状态重新预测。四个蓝色姿态依次对应未来
+                0.16、0.32、0.48、0.64 秒。
+              </p>
+            </div>
+            <div class="world-stage">
+              <div class="legend">
+                <span><i class="sim-dot"></i>仿真</span
+                ><span><i class="wm-dot"></i>世界模型</span>
+              </div>
+              <video
+                id="wm-video"
+                playsinline
+                muted
+                preload="metadata"
+                poster="media/wm-jog-on.jpg"
+                aria-label="慢跑策略执行模式的未来预测"
+              >
+                <source src="media/wm-jog-on.mp4" type="video/mp4" />
+              </video>
+              <div class="world-readout">
+                <span id="wm-frame">Frame 0 / 336</span
+                ><span id="wm-status" aria-live="polite"></span>
+              </div>
+            </div>
+          </div>
+          <div class="wm-transport">
+            <div class="wm-time-label">
+              <strong id="wm-title">慢跑</strong
+              ><output id="wm-clock">0.00 s</output
+              ><button
+                id="wm-play"
+                class="round-button"
+                aria-label="播放世界模型演示"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="timeline">
+              <div id="wm-event" hidden>
+                <span id="wm-event-label">干预发生</span>
+              </div>
+              <input
+                id="wm-time"
+                type="range"
+                min="0"
+                max="6.72"
+                step="0.02"
+                value="0"
+                aria-label="世界模型播放时间"
+              />
+              <div class="timeline-ends">
+                <span>0 s</span><span id="wm-end">6.72 s</span>
+              </div>
+            </div>
+            <button
+              id="wm-step"
+              class="text-button"
+              aria-label="世界模型前进一帧"
+            >
+              下一帧
+            </button>
+          </div>
+          <p class="fine-print">
+            切换模式保留同一时刻。预测只使用当时已知的状态、历史和摩擦，不读取未来仿真状态。触发终止后机器人冻结，预测残影停止。
+          </p>
+        </div>
+      </section>
+      <section class="method band section" id="method">
+        <div class="wrap">
+          <h2>一个循环，<br />两个学习者。</h2>
+          <div class="learning-loop">
+            <div>
+              <h3>仿真采样</h3>
+              <p>MuJoCo Warp 收集真实物理转换。</p>
+            </div>
+            <span aria-hidden="true">→</span>
+            <div>
+              <h3>学习动力学</h3>
+              <p>世界模型学习连续 8 步状态变化。</p>
+            </div>
+            <span aria-hidden="true">→</span>
+            <div>
+              <h3>在模型中优化策略</h3>
+              <p>32 步 BPTT 与末端价值估计。</p>
+            </div>
+          </div>
+          <p class="method-note">
+            梯度穿过学习到的世界模型。物理仿真器提供训练数据。
+          </p>
+          <div class="specs">
+            <div><strong>23</strong><span>原生关节自由度</span></div>
+            <div><strong>50 Hz</strong><span>参考与控制频率</span></div>
+            <div><strong>129,477</strong><span>重定向训练动作</span></div>
+            <div>
+              <strong>2 × 96 GB</strong><span>RTX PRO 6000 训练设备</span>
+            </div>
+          </div>
+          <a
+            class="inline-link"
+            href="https://github.com/yezheng04/supermimic-g1-23dof/blob/main/docs/cuboileo_adaptation.md"
+            target="_blank"
+            rel="noopener"
+            >查看网络与参数对应</a
+          >
+        </div>
+      </section>
+      <section id="results" class="band section">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>把进展放进数据里。</h2>
+            <p>
+              同一组 2,000 条主样本，8 个 checkpoint。<br />训练更久，并不总是跟踪更好。
+            </p>
+          </div>
+          <div class="results-control">
+            <label
+              >Checkpoint
+              <select id="checkpoint">
+                <option value="80000">80k</option>
+                <option value="104000">104k</option>
+                <option value="112000">112k</option>
+                <option value="120000">120k</option>
+                <option value="128000">128k</option>
+                <option value="140000">140k</option>
+                <option value="152000">152k</option>
+                <option value="156000">156k</option>
+              </select></label
+            ><a class="inline-link" href="data/checkpoints.json" download
+              >下载评测摘要</a
+            >
+          </div>
+          <div class="result-grid">
+            <div class="chart-panel">
+              <h3>主样本平均归一化回报</h3>
+              <svg
+                id="return-chart"
+                viewBox="0 0 700 300"
+                role="img"
+                aria-label="8 个 checkpoint 的主样本回报；可通过选择框查看详细数值"
+              ></svg>
+              <p>完整参考时长归一化 · 越高越好</p>
+            </div>
+            <div class="metric-panel" aria-live="polite">
+              <span id="selected-label">80k checkpoint</span
+              ><strong id="metric-return">0.8688</strong
+              ><span>主样本平均回报</span>
+              <div class="metric-pair">
+                <div>
+                  <b id="metric-uniform">4 / 2,000</b><span>主样本失败</span>
+                </div>
+                <div>
+                  <b id="metric-challenge">135 / 462</b
+                  ><span>困难动作失败</span>
+                </div>
+              </div>
+              <p id="metric-note">80k 是本次主样本回报最高的保存点。</p>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <caption>
+                各类动作失败数 / 评测数量 ·
+                <span id="table-checkpoint">80k</span>
+              </caption>
+              <thead>
+                <tr>
+                  <th>俯卧撑</th>
+                  <th>爬行</th>
+                  <th>Inchworm</th>
+                  <th>躺卧恢复</th>
+                  <th>翻转</th>
+                  <th>侧滚</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="group-row">
+                  <td>0 / 72</td>
+                  <td>0 / 128</td>
+                  <td>19 / 22</td>
+                  <td>37 / 54</td>
+                  <td>54 / 54</td>
+                  <td>21 / 21</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="fine-print">
+            评测快照：2026-10-31。2,000 条主样本与 462 条困难动作重叠 7 条，共
+            2,455
+            条不同训练动作；衡量训练覆盖，不是未见动作泛化，也不是全库结果。演示新录于
+            2026-11-01，不替代这组统计。
+          </p>
+        </div>
+      </section>
+      <section class="section wrap questions">
+        <h2>关于这个复现。</h2>
+        <div>
+          <details>
+            <summary>页面是在浏览器里运行策略吗？</summary>
+            <p>
+              Web demo 会在浏览器运行策略和 MuJoCo 物理仿真，可以选择动作、切换
+              80k/104k 策略并自由旋转视角。动作画廊和世界模型残影区是 50fps
+              预录视频。所有展示均为仿真。
+            </p>
+          </details>
+          <details>
+            <summary>与官方 Demo 的制作方式相同吗？</summary>
+            <p>
+              参考了官方白色舞台、未来姿态残影和同步视频控件。我们的素材由 23DoF
+              模型重新仿真和渲染。官方离线录制脚本及精确相机参数未从公开页面获得；“保持动作”是本地明确实现的干预，不等同于关闭电机。
+            </p>
+          </details>
+          <details>
+            <summary>归一化回报与成功率有什么区别？</summary>
+            <p>
+              每条动作奖励总和除以 0.1 ×（参考帧数 −
+              1），再对动作等权平均。提前终止不缩短分母。回报衡量完整时长下的跟踪质量，不是成功率。
+            </p>
+          </details>
+          <details>
+            <summary>当前训练状态如何？</summary>
+            <p>
+              这次长训练在约 159,964 次迭代出现 Critic
+              非有限梯度而停止，最新完整保存点为
+              156k。页面保留诊断结果，不表示训练已稳定收敛。
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="closing wrap">
+        <h2>继续探索。</h2>
+        <p>代码、参数与记录，都在仓库里。</p>
+        <a
+          class="primary-link"
+          href="https://github.com/yezheng04/supermimic-g1-23dof"
+          target="_blank"
+          rel="noopener"
+          >打开 GitHub</a
+        ><a
+          class="inline-link"
+          href="https://github.com/yezheng04/supermimic-g1-23dof/blob/main/docs/demo_design_v2.md"
+          target="_blank"
+          rel="noopener"
+          >查看录制协议</a
+        >
+      </section>
+    </main>
+    <footer class="wrap">
+      <span>G1 23DoF · 独立研究复现</span>
+      <div>
+        <a href="https://bones.studio/" target="_blank" rel="noopener"
+          >Motion Data by Bones Studio</a
+        ><a href="https://supermimic.github.io" target="_blank" rel="noopener"
+          >SuperMimic</a
+        ><a
+          href="https://github.com/CuboiLeo/SuperMimic-Reproduced"
+          target="_blank"
+          rel="noopener"
+          >CuboiLeo</a
+        ><a
+          href="https://github.com/NVIDIA/soma-retargeter"
+          target="_blank"
+          rel="noopener"
+          >SOMA</a
+        >
+      </div>
+    </footer>
+    <p id="load-error" class="error-message" hidden role="alert">
+      演示数据未能加载，请刷新页面重试，或查看 GitHub Release 中的视频。
+    </p>
+    <noscript
+      ><p class="wrap">
+        请启用 JavaScript 使用播放器；完整视频也可在 GitHub Release 下载。
+      </p></noscript
+    >
+  </body>
+</html>

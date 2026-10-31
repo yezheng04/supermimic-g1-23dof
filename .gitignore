@@ -31,3 +31,6 @@ auth.json
 .openai/
 node_modules/
 .DS_Store
+# Browser runtime and exported models are verified Release assets.
+/website/demo/vendor/
+/website/demo/assets/

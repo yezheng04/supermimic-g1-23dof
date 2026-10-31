@@ -1,0 +1,10 @@
+{
+  "name": "sm23-browser-demo",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@mujoco/mujoco": "3.8.0",
+    "onnxruntime-web": "1.23.2",
+    "three": "0.180.0"
+  }
+}

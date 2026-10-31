@@ -1,0 +1,203 @@
+{
+  "native60StepMaxQposError": 3.721409791435093e-07,
+  "results": [
+    {
+      "policy": "80000",
+      "motion": "walk",
+      "frames": 278,
+      "steps": 277,
+      "reason": "完成动作",
+      "wallMs": 278
+    },
+    {
+      "policy": "80000",
+      "motion": "walk2",
+      "frames": 195,
+      "steps": 194,
+      "reason": "完成动作",
+      "wallMs": 279
+    },
+    {
+      "policy": "80000",
+      "motion": "frog",
+      "frames": 427,
+      "steps": 426,
+      "reason": "完成动作",
+      "wallMs": 414
+    },
+    {
+      "policy": "80000",
+      "motion": "frog2",
+      "frames": 396,
+      "steps": 395,
+      "reason": "完成动作",
+      "wallMs": 423
+    },
+    {
+      "policy": "80000",
+      "motion": "jog",
+      "frames": 166,
+      "steps": 165,
+      "reason": "完成动作",
+      "wallMs": 280
+    },
+    {
+      "policy": "80000",
+      "motion": "jog2",
+      "frames": 168,
+      "steps": 167,
+      "reason": "完成动作",
+      "wallMs": 288
+    },
+    {
+      "policy": "80000",
+      "motion": "dance",
+      "frames": 425,
+      "steps": 424,
+      "reason": "完成动作",
+      "wallMs": 409
+    },
+    {
+      "policy": "80000",
+      "motion": "dance2",
+      "frames": 289,
+      "steps": 288,
+      "reason": "完成动作",
+      "wallMs": 415
+    },
+    {
+      "policy": "80000",
+      "motion": "kick",
+      "frames": 463,
+      "steps": 462,
+      "reason": "完成动作",
+      "wallMs": 418
+    },
+    {
+      "policy": "80000",
+      "motion": "kick2",
+      "frames": 425,
+      "steps": 424,
+      "reason": "完成动作",
+      "wallMs": 418
+    },
+    {
+      "policy": "80000",
+      "motion": "punch",
+      "frames": 179,
+      "steps": 178,
+      "reason": "完成动作",
+      "wallMs": 274
+    },
+    {
+      "policy": "80000",
+      "motion": "punch2",
+      "frames": 173,
+      "steps": 172,
+      "reason": "完成动作",
+      "wallMs": 277
+    },
+    {
+      "policy": "104000",
+      "motion": "walk",
+      "frames": 278,
+      "steps": 277,
+      "reason": "完成动作",
+      "wallMs": 276
+    },
+    {
+      "policy": "104000",
+      "motion": "walk2",
+      "frames": 195,
+      "steps": 194,
+      "reason": "完成动作",
+      "wallMs": 271
+    },
+    {
+      "policy": "104000",
+      "motion": "frog",
+      "frames": 427,
+      "steps": 426,
+      "reason": "完成动作",
+      "wallMs": 416
+    },
+    {
+      "policy": "104000",
+      "motion": "frog2",
+      "frames": 396,
+      "steps": 395,
+      "reason": "完成动作",
+      "wallMs": 281
+    },
+    {
+      "policy": "104000",
+      "motion": "jog",
+      "frames": 166,
+      "steps": 165,
+      "reason": "完成动作",
+      "wallMs": 277
+    },
+    {
+      "policy": "104000",
+      "motion": "jog2",
+      "frames": 168,
+      "steps": 167,
+      "reason": "完成动作",
+      "wallMs": 281
+    },
+    {
+      "policy": "104000",
+      "motion": "dance",
+      "frames": 425,
+      "steps": 424,
+      "reason": "完成动作",
+      "wallMs": 422
+    },
+    {
+      "policy": "104000",
+      "motion": "dance2",
+      "frames": 289,
+      "steps": 288,
+      "reason": "完成动作",
+      "wallMs": 418
+    },
+    {
+      "policy": "104000",
+      "motion": "kick",
+      "frames": 463,
+      "steps": 462,
+      "reason": "完成动作",
+      "wallMs": 414
+    },
+    {
+      "policy": "104000",
+      "motion": "kick2",
+      "frames": 425,
+      "steps": 424,
+      "reason": "完成动作",
+      "wallMs": 419
+    },
+    {
+      "policy": "104000",
+      "motion": "punch",
+      "frames": 179,
+      "steps": 178,
+      "reason": "完成动作",
+      "wallMs": 276
+    },
+    {
+      "policy": "104000",
+      "motion": "punch2",
+      "frames": 173,
+      "steps": 172,
+      "reason": "完成动作",
+      "wallMs": 275
+    }
+  ],
+  "onnxMaxActionAbsError": {
+    "80000": 8.344650268554688e-07,
+    "104000": 8.344650268554688e-07
+  },
+  "browser": "Headless Chromium, Linux; no cross-origin isolation",
+  "physics": "MuJoCo WASM 3.8.0 vs native CPU 3.5.0"
+}

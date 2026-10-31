@@ -1,125 +1,104 @@
 {
   "repository": "yezheng04/supermimic-g1-23dof",
-  "tag": "v0.2.0-showcase",
+  "tag": "v0.3.0-web-demo",
   "assets": [
     {
       "name": "hero.mp4",
       "path": "website/media/hero.mp4",
       "kind": "video",
-      "bytes": 805872,
-      "sha256": "53656bb2ad582281be5c45cb758989d6f2e34a424521a344e043c46ad4b45b08"
-    },
-    {
-      "name": "motion-crawl.mp4",
-      "path": "website/media/motion-crawl.mp4",
-      "kind": "video",
-      "bytes": 564175,
-      "sha256": "87b9984164a4441d93eab032661cc54805c0d95384ff3b44f3cb7bdd0205c723"
+      "bytes": 812660,
+      "sha256": "72301f2f0d9e9c0ecc54767d0b73df52d1dcb62229fbbd68182c0d3443711052"
     },
     {
       "name": "motion-dance.mp4",
       "path": "website/media/motion-dance.mp4",
       "kind": "video",
-      "bytes": 505403,
-      "sha256": "64d3610dd52e875553c61ff89bc95a687bdd0f1e0c71059a7492b21d72ed52af"
-    },
-    {
-      "name": "motion-flip.mp4",
-      "path": "website/media/motion-flip.mp4",
-      "kind": "video",
-      "bytes": 434419,
-      "sha256": "a6ec4af435b7642c4a4e4267f02002809be48f1fb5e78d60841f7ab43f05fdf1"
+      "bytes": 721056,
+      "sha256": "f1396944a00bd4ac89b006ce1d2203a37e71ab9e337c7966ab9e3224d853b5ee"
     },
     {
       "name": "motion-jog.mp4",
       "path": "website/media/motion-jog.mp4",
       "kind": "video",
-      "bytes": 578258,
-      "sha256": "ea06a0054dd51b983f2dddf0f3f297b2b247e3c4734cfed6ca36f4aa764d325c"
+      "bytes": 377716,
+      "sha256": "00ae696e38792c97eab083b9d6da35dfb3427fda5eccadeadf33a2d2b6690e0b"
     },
     {
       "name": "motion-jump.mp4",
       "path": "website/media/motion-jump.mp4",
       "kind": "video",
-      "bytes": 414695,
-      "sha256": "b77a5be2940a55a1e06dd508673235e03abacc2185b3ce8301a0d6aa670d1ca8"
+      "bytes": 746638,
+      "sha256": "0383a549167bfee063af6cd3551c98e7979ac0bd115f3acd279903b9f2f7d1b4"
     },
     {
-      "name": "motion-pushup.mp4",
-      "path": "website/media/motion-pushup.mp4",
+      "name": "motion-kick.mp4",
+      "path": "website/media/motion-kick.mp4",
       "kind": "video",
-      "bytes": 445371,
-      "sha256": "70a81f17c49ea8f87781ca60b53a4bb2753a2419d339170e8dcee18b5aee3a5e"
+      "bytes": 777305,
+      "sha256": "8af037c9fc993edb867c4770f89bd2ea12ce78fb1f8474d687a0324619828056"
     },
     {
-      "name": "motion-roll.mp4",
-      "path": "website/media/motion-roll.mp4",
+      "name": "motion-punch.mp4",
+      "path": "website/media/motion-punch.mp4",
       "kind": "video",
-      "bytes": 331866,
-      "sha256": "01b384e581794096040568a6731d54ade81fc1f145146088fd0b874e034eadc8"
+      "bytes": 321813,
+      "sha256": "d3f0595ffce617710bf10510db1913ed2a3ed5b8bff1b173466eb4da61a5c5b0"
     },
     {
       "name": "motion-walk.mp4",
       "path": "website/media/motion-walk.mp4",
       "kind": "video",
-      "bytes": 580932,
-      "sha256": "0aa51b65c56f218a515713ee4b5de26637c991f0498b5a27ed9b993efd838662"
-    },
-    {
-      "name": "reference-flip.mp4",
-      "path": "website/media/reference-flip.mp4",
-      "kind": "video",
-      "bytes": 628239,
-      "sha256": "9878afed855a6b374a8bb5e32b0501dd8eb9eb069750389dc6bbc6734543d7c4"
-    },
-    {
-      "name": "reference-roll.mp4",
-      "path": "website/media/reference-roll.mp4",
-      "kind": "video",
-      "bytes": 336184,
-      "sha256": "de16e1f8eb2aed883e61d90a16cfe2ae02d25eaebc64115d9c358e22e50d99e5"
+      "bytes": 567261,
+      "sha256": "7c87bef1e39adb49154f53041fee15215f6e47e6a1ca0445431389af0d4aa19d"
     },
     {
       "name": "wm-jog-hold.mp4",
       "path": "website/media/wm-jog-hold.mp4",
       "kind": "video",
-      "bytes": 628482,
-      "sha256": "bb92b93d73adf006e1d5b0f6dd6abc27bce72a965c45e70b9eaa5e096acee6b8"
+      "bytes": 629714,
+      "sha256": "68fb56b945555f422b9536f7d7a0b6075f64410815ac1c1aaf39fc739059bbc5"
     },
     {
       "name": "wm-jog-on.mp4",
       "path": "website/media/wm-jog-on.mp4",
       "kind": "video",
-      "bytes": 1107270,
-      "sha256": "1de98946676c6bdf1d8efb52b527aa147fc0814500d63a467d256ec80fc41d3b"
+      "bytes": 702841,
+      "sha256": "d3019925fe9dbca51d4f71965b6a5d2dbe1dc038cfd8658d0644e976e37b12af"
     },
     {
       "name": "wm-jog-slip.mp4",
       "path": "website/media/wm-jog-slip.mp4",
       "kind": "video",
-      "bytes": 1102684,
-      "sha256": "98878401f874c7af26377a5582f9ffa0ee3125d4f7fdb28a44469c382d43edd8"
+      "bytes": 695929,
+      "sha256": "d2ce75545b1ce8a552919d8101f5554664d9e742145dd51d8fc8da106798f739"
     },
     {
       "name": "wm-jump-hold.mp4",
       "path": "website/media/wm-jump-hold.mp4",
       "kind": "video",
-      "bytes": 617050,
-      "sha256": "21fbb72ac91be0f170b493da19b5eeca1b0c0d94146657a63dceb55076ca6c9b"
+      "bytes": 612910,
+      "sha256": "0a9bea14033252e0fef072069e474a47da97376c3b00d3d13b0aab404a762491"
     },
     {
       "name": "wm-jump-on.mp4",
       "path": "website/media/wm-jump-on.mp4",
       "kind": "video",
-      "bytes": 614307,
-      "sha256": "49eb0b94d66a21c368fcd2791f23371cca347fb88b0a808562fd8b6bfb51d18e"
+      "bytes": 1040305,
+      "sha256": "187bc1046f0d7684fa8000e6da34040aa47de50ffcce24ee44d262ea4c4cf183"
     },
     {
       "name": "wm-jump-slip.mp4",
       "path": "website/media/wm-jump-slip.mp4",
       "kind": "video",
-      "bytes": 601200,
-      "sha256": "0ec81a10b9d0d63ebb8d80777b4a1dfad94bf194ddbe26b6dfb91896aec1687b"
+      "bytes": 1085987,
+      "sha256": "786b9aae8525c96e992bfaa6efdc6004e39ff442e9364e8e9c495170dcc7f9bf"
+    },
+    {
+      "name": "browser-runtime.zip",
+      "path": ".cache/browser-runtime.zip",
+      "kind": "browser",
+      "bytes": 43659760,
+      "sha256": "70307171ab4c02ce7b6ec9379d19a6d571ddaa2f4d7118fd3d533192501eea61"
     },
     {
       "name": "models_0080000.pt",

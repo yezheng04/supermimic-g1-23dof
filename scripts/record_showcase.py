@@ -56,20 +56,26 @@ def main(a):
     if a.output.exists() and any(a.output.iterdir()):
         raise ValueError('Use a new recording directory')
     a.output.mkdir(parents=True, exist_ok=True)
+    clips = CLIPS
+    if a.selection:
+        labels={'walk':'向前行走','jog':'慢跑','frog':'蛙跳','dance':'街舞','kick':'踢腿','punch':'出拳'}
+        rows=json.loads(a.selection.read_text())['selected']
+        rows=[r for r in rows if r['slug']==r['category']]
+        clips=[('jump' if r['slug']=='frog' else r['slug'],labels[r['category']],r['name']) for r in rows]
     ck = load_checkpoint(a.checkpoint)
     assert ck['iteration'] == 80000
     cfg = apply_config(TrainConfig(), ck['config'])
     source = load_pack(a.library)
     indices = {name:i for i,name in enumerate(source['names'])}
     chunks, lengths, starts = [], [], []
-    for _, _, name in CLIPS:
+    for _, _, name in clips:
         i = indices[name]; n = int(source['lengths'][i]); start = int(source['starts'][i])
         starts.append(sum(lengths)); lengths.append(n); chunks.append(source['ref'][start:start+n])
-    pack = {**source, 'names':[c[2] for c in CLIPS], 'starts':starts, 'lengths':lengths,
+    pack = {**source, 'names':[c[2] for c in clips], 'starts':starts, 'lengths':lengths,
             'ref':torch.cat(chunks), 'manifest_sha256':None}
     validate_pack(pack); torch.save(pack, a.output/'motions.pt')
     del pack, source, chunks
-    runs = [(i, 'on') for i in range(len(CLIPS))]+[(i,m) for i in (1,2) for m in ('hold','slip')]
+    runs = [(i, 'on') for i in range(len(clips))]+[(i,m) for i,c in enumerate(clips) if c[0] in ('jog','jump') for m in ('hold','slip')]
     env = make_env(SuperMimicEnvCfgArgs(npz_files=[str(a.output/'motions.pt')], num_envs=len(runs),
         episode_length_s=1e5, action_noise_std=0., obs_noise=False, reset_noise=False,
         domain_randomization=False, sampling_mode='start', record_transitions=False,
@@ -163,7 +169,7 @@ def main(a):
             contexts=contexts.cpu().numpy(),future=trails,reference=reference,steps=steps.cpu().numpy())
         records=[]
         for k,(i,mode) in enumerate(runs):
-            slug,title,name=CLIPS[i]
+            slug,title,name=clips[i]
             records.append(dict(id=f'{slug}-{mode}',slug=slug,title=title,name=name,mode=mode,
                 reference_frames=lengths[i],steps=int(steps[k]),failed=bool(failed[k]),failure_reason=reasons[k],
                 return_full=float(returns[k])/(.1*(lengths[i]-1)),event_frame=event_frame if mode!='on' else None))
@@ -186,4 +192,5 @@ if __name__=='__main__':
     p.add_argument('--checkpoint',type=Path,required=True)
     p.add_argument('--library',type=Path,required=True)
     p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--selection',type=Path)
     main(p.parse_args())

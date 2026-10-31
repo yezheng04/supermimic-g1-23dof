@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>G1 · 在浏览器里运行策略</title>
+    <link rel="icon" href="../favicon.svg" />
+    <link rel="stylesheet" href="demo.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.js" } }
+    </script>
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="../">G1 <span>SuperMimic</span></a
+      ><span class="live-label">浏览器仿真</span>
+    </header>
+    <main>
+      <aside>
+        <h1>让它动起来。</h1>
+        <p>选择动作，运行策略。<br />拖动画面，自由观察。</p>
+        <label for="category">动作分类</label
+        ><select id="category" disabled>
+          <option>正在加载</option></select
+        ><label for="motion">动作片段</label
+        ><select id="motion" disabled></select
+        ><label for="policy">策略</label
+        ><select id="policy" disabled></select>
+        <p class="description" id="clip-description"></p>
+        <a
+          class="protocol"
+          href="https://github.com/yezheng04/supermimic-g1-23dof/blob/main/docs/browser_demo.md"
+          target="_blank"
+          rel="noopener"
+          >运行说明</a
+        >
+      </aside>
+      <section class="stage" aria-label="交互式机器人仿真">
+        <div id="viewport"></div>
+        <div class="stage-top">
+          <span id="state-label" role="status">正在准备</span>
+          <div class="views" role="group" aria-label="相机视角">
+            <button data-view="front" aria-pressed="false">正面</button
+            ><button data-view="quarter" aria-pressed="true">侧前方</button
+            ><button data-view="side" aria-pressed="false">侧面</button>
+          </div>
+        </div>
+        <div id="loading" role="status">
+          <span class="loader"></span
+          ><strong id="loading-text">加载仿真引擎</strong>
+          <p>首次启动需要下载策略与机器人资源。</p>
+        </div>
+        <div id="error" hidden role="alert">
+          <strong>仿真暂时无法启动</strong>
+          <p id="error-text"></p>
+          <button id="retry">重新加载</button
+          ><a href="../#motions">观看动作视频</a>
+        </div>
+        <div class="stage-bottom">
+          <div class="buttons">
+            <button id="play" disabled>运行策略</button
+            ><button id="reset" disabled>重新开始</button
+            ><button id="push" disabled title="给机器人一个小幅速度扰动">
+              轻推一下
+            </button>
+          </div>
+          <div class="readout">
+            <output id="clock">0.00 s</output><span id="performance"></span>
+          </div>
+          <progress
+            id="progress"
+            max="1"
+            value="0"
+            aria-label="动作完成进度"
+          ></progress>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span
+        >原生 23DoF · 50Hz 控制 · 本机计算<br /><a
+          href="https://bones.studio/"
+          target="_blank"
+          rel="noopener"
+          >Motion Data by Bones Studio</a
+        >
+        ·
+        <a
+          href="https://github.com/yezheng04/supermimic-g1-23dof/tree/main/licenses/browser"
+          target="_blank"
+          rel="noopener"
+          >开源许可</a
+        ></span
+      ><span>精选动作不代表全库成功率。浏览器物理可能与训练后端存在差异。</span>
+    </footer>
+  </body>
+</html>

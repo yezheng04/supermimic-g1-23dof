@@ -3,7 +3,7 @@
 ## 查看已有演示
 
 ```bash
-python3 scripts/download_demo_assets.py          # 17 个新录制 MP4
+python3 scripts/download_demo_assets.py          # 13 个视频及浏览器运行资源
 python3 scripts/download_demo_assets.py --models # 额外下载 80k Actor / WM，约 68 MB
 ```
 
@@ -41,10 +41,10 @@ data/training/bones_seed_v4_full_v1/library_native23_fp16.pt
 | 视频 | 内容 | 对齐方式 |
 | --- | --- | --- |
 | `hero.mp4` | 新录制正常策略的选段剪辑 | 原速，镜头切换；完整片段在动作区 |
-| `motion-*.mp4` | 六种正常动作与两种失败动作的策略执行 | 首帧开始，终止后冻结 |
+| `motion-*.mp4` | 向前行走、蛙跳、慢跑、街舞、踢腿、出拳 | 首帧开始，终止后冻结 |
 | `wm-{jog,jump}-{on,hold,slip}.mp4` | 仿真与未来姿态 | 每帧重新预测32步，显示未来0.16/0.32/0.48/0.64秒 |
-| `reference-{flip,roll}.mp4` | 重定向参考 | 与策略同时间、同相机，无轨迹重对齐 |
+| 浏览器运行资源包 | 12条精选动作的目标编码、两个策略解码器、原生物理模型和运行引擎 | 实时状态反馈，不播放预存动作 |
 
-初版的窗口/连续预测对比仍保存在 `v0.1.0-demo` Release。新版使用 `v0.2.0-showcase`，录制协议与官方页面核查见 [Demo 设计](demo_design_v2.md)。
+初版的窗口/连续预测对比仍保存在 `v0.1.0-demo` Release。新版使用 `v0.3.0-web-demo`，录制协议与官方页面核查见 [Demo 设计](demo_design_v3.md)与[浏览器说明](browser_demo.md)。
 
 视频全部为 80k checkpoint 仿真结果。视频以 50fps 输出，控件和标签由网页绘制。预录视频的播放调速仅改变观看速度，不改变训练或数据时间轴。

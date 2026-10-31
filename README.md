@@ -2,11 +2,11 @@
 
 原生 **23DoF Unitree G1** 的 SuperMimic 独立复现：SOMA 重定向、50Hz 参考动作、MuJoCo Warp 采样、可微世界模型与 32 步 BPTT。
 
-[展示页面](https://yezheng04.github.io/supermimic-g1-23dof/) · [演示资源](https://github.com/yezheng04/supermimic-g1-23dof/releases/tag/v0.2.0-showcase) · [网络与参数](docs/cuboileo_adaptation.md) · [评测结果](docs/results.md)
+[展示页面](https://yezheng04.github.io/supermimic-g1-23dof/) · [演示资源](https://github.com/yezheng04/supermimic-g1-23dof/releases/tag/v0.3.0-web-demo) · [网络与参数](docs/cuboileo_adaptation.md) · [评测结果](docs/results.md)
 
 ![原生 23DoF G1 仿真演示](website/media/hero.jpg)
 
-这是研究复现工程，不是 SuperMimic 官方代码。展示素材均为**预录仿真**，没有实机验证。评测快照中 80k 主样本回报最高，翻转和侧滚仍失败；当前尚未稳定收敛。
+这是研究复现工程，不是 SuperMimic 官方代码。展示包括**预录视频与浏览器闭环仿真**，没有实机验证。评测快照中 80k 主样本回报最高，翻转和侧滚仍失败；当前尚未稳定收敛。
 
 ## 查看展示页
 
@@ -19,7 +19,7 @@ python3 scripts/download_demo_assets.py
 python3 scripts/preview_website.py
 ```
 
-打开 <http://localhost:8000>。可切换六种动作、三种世界模型模式及参考/策略对比，调整播放速度，比较 8 个 checkpoint。网页不执行策略推理。静态源码位于 `website/`，可直接部署；无需 Node 或构建工具。GitHub Pages 展示页可直接公开访问。推送网页修改到 main 后，Actions 会自动下载并校验视频，再发布 website/；不会部署训练数据或模型权重。
+打开 <http://localhost:8000>。可切换六类视频动作、三种世界模型模式，比较 8 个 checkpoint。新增 [Web demo](https://yezheng04.github.io/supermimic-g1-23dof/demo/) 在浏览器运行策略，提供12条精选动作与80k/104k选择，支持视角旋转、暂停和重置。运行方式见 [浏览器说明](docs/browser_demo.md)。静态源码位于 `website/`，可直接部署；无需 Node 或构建工具。GitHub Pages 展示页可直接公开访问。推送网页修改到 main 后，Actions 会自动下载并校验视频，再发布 website/；会部署浏览器专用解码器与目标编码，不包含训练缓存或完整checkpoint。
 
 ## 安装与训练
 
@@ -76,3 +76,5 @@ python3 scripts/check_repository.py
 感谢 [SuperMimic](https://supermimic.github.io)、[CuboiLeo](https://github.com/CuboiLeo/SuperMimic-Reproduced)、[kangzejian1896](https://github.com/kangzejian1896/supermimic-g1-reproduction)、[SOMA Retargeter](https://github.com/NVIDIA/soma-retargeter)、[Unitree](https://github.com/unitreerobotics/unitree_rl_mjlab) 和 [mjlab](https://github.com/mujocolab/mjlab)。展示页布局参考 [SuperMimic](https://supermimic.github.io) 与 [Proteus](https://proteushumanoids.vercel.app)，使用本项目视频与数据重新实现。
 
 代码许可及来源见 [LICENSE](LICENSE)、[来源说明](docs/provenance.md) 和 `licenses/`。第三方机器人资源与数据保持各自许可；代码许可不覆盖 BONES-SEED 数据。
+
+Training data includes [Motion Data by Bones Studio](https://bones.studio/). Use of the underlying dataset is subject to the BONES Motion Capture Dataset License Agreement.
