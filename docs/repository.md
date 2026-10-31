@@ -8,6 +8,6 @@
 - 两份 SOMA GUI 配置改用相对于仓库根目录的路径；从仓库根目录启动 GUI。
 - 保留源工程已有 Critic 学习率比例修复：独立设置 Critic LR 时保持相对于 Actor 的比例。当前正式配置二者相同，不改变原设置；该修复不表示解决长训练失稳。
 - `evidence/post100k/` 是已完成评测的冻结证据；`docs/` 中较早的诊断文档属于历史记录，引用的大型 `reports/` 原件留在原研究工作区。当前结论以 `docs/results.md` 为准。
-- `website/` 是无构建依赖的静态站点。视频通过 GitHub 私有 Release 下载；托管版本将相同视频打包进仅限所有者访问的站点。
+- `website/` 是无构建依赖的静态站点。视频通过公开 GitHub Release 下载；GitHub Actions 校验视频后只将 website/ 部署到公开 GitHub Pages。训练代码仓库及已有 Release 已按用户要求公开，原始数据和训练缓存仍留在研究工作区。
 
 源代码变更与文件校验记录位于 `evidence/source-snapshot.json`。它只描述本次整理，不会同步修改运行中的远端代码。后续开发应明确选择本仓库或原研究工作区，避免两边各自修改。

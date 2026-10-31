@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Fetch private Release assets through gh and verify the tracked SHA-256 manifest."""
+"""Download public Release assets and verify the tracked SHA-256 manifest."""
 import argparse
 import hashlib
 import json
 from pathlib import Path
 import shutil
-import subprocess
 import tempfile
+from urllib.parse import quote
+from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -21,8 +22,6 @@ def main():
     parser.add_argument('--models', action='store_true', help='Also fetch the model-only 80k bundle')
     args = parser.parse_args()
     manifest = json.loads((ROOT / 'release-assets.json').read_text())
-    if not shutil.which('gh'):
-        parser.error('Install GitHub CLI and run gh auth login with access to this private repository.')
     for item in manifest['assets']:
         if item['kind'] == 'model' and not args.models:
             continue
@@ -34,9 +33,12 @@ def main():
             continue
         target.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix='.download-', dir=target.parent) as tmp:
-            subprocess.run(['gh', 'release', 'download', manifest['tag'], '--repo', manifest['repository'],
-                            '--pattern', item['name'], '--dir', tmp], check=True)
             downloaded = Path(tmp) / item['name']
+            url = (f'https://github.com/{manifest["repository"]}/releases/download/'
+                   f'{quote(manifest["tag"], safe="")}/{quote(item["name"], safe="")}')
+            request = Request(url, headers={'User-Agent': 'G1-in-Motion-asset-downloader'})
+            with urlopen(request, timeout=120) as response, downloaded.open('wb') as stream:
+                shutil.copyfileobj(response, stream)
             if downloaded.stat().st_size != item['bytes'] or digest(downloaded) != item['sha256']:
                 raise ValueError(f'Asset checksum mismatch: {item["name"]}')
             downloaded.replace(target)

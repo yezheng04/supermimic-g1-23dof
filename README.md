@@ -2,7 +2,7 @@
 
 原生 **23DoF Unitree G1** 的 SuperMimic 独立复现：SOMA 重定向、50Hz 参考动作、MuJoCo Warp 采样、可微世界模型与 32 步 BPTT。
 
-[展示页面](https://supermimic-g1-23dof.fastknot.chatgpt.site) · [演示资源](https://github.com/yezheng04/supermimic-g1-23dof/releases/tag/v0.1.0-demo) · [网络与参数](docs/cuboileo_adaptation.md) · [评测结果](docs/results.md)
+[展示页面](https://yezheng04.github.io/supermimic-g1-23dof/) · [演示资源](https://github.com/yezheng04/supermimic-g1-23dof/releases/tag/v0.1.0-demo) · [网络与参数](docs/cuboileo_adaptation.md) · [评测结果](docs/results.md)
 
 ![G1 与世界模型未来轨迹](website/media/future-trail.jpg)
 
@@ -10,16 +10,16 @@
 
 ## 查看展示页
 
-Python 3、Git 和已登录且拥有仓库访问权限的 GitHub CLI 即可，无需 CUDA。
+Python 3.11+ 和 Git 即可，无需 CUDA 或 GitHub 登录。
 
 ```bash
-gh repo clone yezheng04/supermimic-g1-23dof
+git clone https://github.com/yezheng04/supermimic-g1-23dof.git
 cd supermimic-g1-23dof
 python3 scripts/download_demo_assets.py
 python3 -m http.server 8000 --bind 127.0.0.1 --directory website
 ```
 
-打开 <http://localhost:8000>。可切换未来轨迹、预测对比、侧滚和翻转视频，调整播放速度，比较 8 个 checkpoint。网页不执行策略推理。静态源码位于 `website/`，可直接部署；无需 Node 或构建工具。私有托管页需要对应 ChatGPT 账户访问权限。
+打开 <http://localhost:8000>。可切换未来轨迹、预测对比、侧滚和翻转视频，调整播放速度，比较 8 个 checkpoint。网页不执行策略推理。静态源码位于 `website/`，可直接部署；无需 Node 或构建工具。GitHub Pages 展示页可直接公开访问。推送网页修改到 main 后，Actions 会自动下载并校验视频，再发布 website/；不会部署训练数据或模型权重。
 
 ## 安装与训练
 
@@ -60,7 +60,7 @@ bash scripts/train_bones_2gpu.sh
 | `docs/` | 数据流程、算法对应及实验记录 |
 | `licenses/` | 保留的上游许可 |
 
-原始数据、训练缓存、日志、环境及权重不进入 Git。视频和可选模型通过私有 Release 分发，并由 [资产清单](release-assets.json) 的 SHA-256 校验。BONES-SEED 原始数据需要从提供方单独获取。
+原始数据、训练缓存、日志、环境及权重不进入 Git。视频和可选模型通过公开 Release 分发，并由 [资产清单](release-assets.json) 的 SHA-256 校验。BONES-SEED 原始数据需要从提供方单独获取。
 
 ## 开发
 

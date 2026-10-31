@@ -7,7 +7,7 @@ python3 scripts/download_demo_assets.py          # 四个 MP4，约 39 MB
 python3 scripts/download_demo_assets.py --models # 额外下载 80k Actor / WM，约 68 MB
 ```
 
-下载使用当前 `gh auth` 登录态访问私有 Release；不在源码或网页中保存凭据。每个文件在写入目标路径前检查大小与 SHA-256。海报和评测摘要已在 Git 中，不需要额外下载。
+下载直接通过 HTTPS 访问公开 Release，无需 GitHub CLI、登录态或令牌。每个文件在写入目标路径前检查大小与 SHA-256。海报和评测摘要已在 Git 中，不需要额外下载。
 
 模型包 `models/models_0080000.pt` 包含 `policy`、`world_model`、`config` 和迭代信息，缺少 Critic、优化器、Replay 和 RNG，不能作为完整续训 checkpoint。
 
