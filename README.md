@@ -2,9 +2,9 @@
 
 原生 **23DoF Unitree G1** 的 SuperMimic 独立复现：SOMA 重定向、50Hz 参考动作、MuJoCo Warp 采样、可微世界模型与 32 步 BPTT。
 
-[展示页面](https://yezheng04.github.io/supermimic-g1-23dof/) · [演示资源](https://github.com/yezheng04/supermimic-g1-23dof/releases/tag/v0.1.0-demo) · [网络与参数](docs/cuboileo_adaptation.md) · [评测结果](docs/results.md)
+[展示页面](https://yezheng04.github.io/supermimic-g1-23dof/) · [演示资源](https://github.com/yezheng04/supermimic-g1-23dof/releases/tag/v0.2.0-showcase) · [网络与参数](docs/cuboileo_adaptation.md) · [评测结果](docs/results.md)
 
-![G1 与世界模型未来轨迹](website/media/future-trail.jpg)
+![原生 23DoF G1 仿真演示](website/media/hero.jpg)
 
 这是研究复现工程，不是 SuperMimic 官方代码。展示素材均为**预录仿真**，没有实机验证。评测快照中 80k 主样本回报最高，翻转和侧滚仍失败；当前尚未稳定收敛。
 
@@ -16,10 +16,10 @@ Python 3.11+ 和 Git 即可，无需 CUDA 或 GitHub 登录。
 git clone https://github.com/yezheng04/supermimic-g1-23dof.git
 cd supermimic-g1-23dof
 python3 scripts/download_demo_assets.py
-python3 -m http.server 8000 --bind 127.0.0.1 --directory website
+python3 scripts/preview_website.py
 ```
 
-打开 <http://localhost:8000>。可切换未来轨迹、预测对比、侧滚和翻转视频，调整播放速度，比较 8 个 checkpoint。网页不执行策略推理。静态源码位于 `website/`，可直接部署；无需 Node 或构建工具。GitHub Pages 展示页可直接公开访问。推送网页修改到 main 后，Actions 会自动下载并校验视频，再发布 website/；不会部署训练数据或模型权重。
+打开 <http://localhost:8000>。可切换六种动作、三种世界模型模式及参考/策略对比，调整播放速度，比较 8 个 checkpoint。网页不执行策略推理。静态源码位于 `website/`，可直接部署；无需 Node 或构建工具。GitHub Pages 展示页可直接公开访问。推送网页修改到 main 后，Actions 会自动下载并校验视频，再发布 website/；不会部署训练数据或模型权重。
 
 ## 安装与训练
 

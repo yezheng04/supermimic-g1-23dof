@@ -3,13 +3,13 @@
 ## 查看已有演示
 
 ```bash
-python3 scripts/download_demo_assets.py          # 四个 MP4，约 39 MB
+python3 scripts/download_demo_assets.py          # 17 个新录制 MP4
 python3 scripts/download_demo_assets.py --models # 额外下载 80k Actor / WM，约 68 MB
 ```
 
 下载直接通过 HTTPS 访问公开 Release，无需 GitHub CLI、登录态或令牌。每个文件在写入目标路径前检查大小与 SHA-256。海报和评测摘要已在 Git 中，不需要额外下载。
 
-模型包 `models/models_0080000.pt` 包含 `policy`、`world_model`、`config` 和迭代信息，缺少 Critic、优化器、Replay 和 RNG，不能作为完整续训 checkpoint。
+模型包 `models/models_0080000.pt` 包含 `policy`、`wm`、`config` 和迭代信息，缺少 Critic、优化器、Replay 和 RNG，不能作为完整续训 checkpoint。
 
 ## 准备训练数据
 
@@ -38,10 +38,13 @@ data/training/bones_seed_v4_full_v1/library_native23_fp16.pt
 
 ## 网站素材含义
 
-| 视频 | 蓝色内容 | 对齐方式 |
+| 视频 | 内容 | 对齐方式 |
 | --- | --- | --- |
-| `future-trail.mp4` | 世界模型未来姿态 | 每帧重新预测 32 步，预测状态内闭环计算动作 |
-| `world-model.mp4` | 同一时刻的世界模型预测 | 使用实际已记录动作，比较 32 步窗口与整段连续预测 |
-| `side-roll.mp4`、`flips.mp4` | 重定向参考机器人 | 同时间、同空间，无逐帧对齐修正；失败后策略冻结 |
+| `hero.mp4` | 新录制正常策略的选段剪辑 | 原速，镜头切换；完整片段在动作区 |
+| `motion-*.mp4` | 六种正常动作与两种失败动作的策略执行 | 首帧开始，终止后冻结 |
+| `wm-{jog,jump}-{on,hold,slip}.mp4` | 仿真与未来姿态 | 每帧重新预测32步，显示未来0.16/0.32/0.48/0.64秒 |
+| `reference-{flip,roll}.mp4` | 重定向参考 | 与策略同时间、同相机，无轨迹重对齐 |
 
-视频全部为 80k checkpoint 仿真结果。预录视频的播放调速仅改变观看速度，不改变训练或数据时间轴。
+初版的窗口/连续预测对比仍保存在 `v0.1.0-demo` Release。新版使用 `v0.2.0-showcase`，录制协议与官方页面核查见 [Demo 设计](demo_design_v2.md)。
+
+视频全部为 80k checkpoint 仿真结果。视频以 50fps 输出，控件和标签由网页绘制。预录视频的播放调速仅改变观看速度，不改变训练或数据时间轴。

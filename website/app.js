@@ -1,26 +1,56 @@
-const $ = (id) => document.getElementById(id);
-const demos = {
-  future: {file:'future-trail', tag:'WORLD MODEL / FUTURE TRAIL', title:'未来 0.64 秒，逐帧展开。', description:'每个展示帧都从当前仿真状态重新预测 32 步；策略在预测状态上递归计算动作。蓝色残影每隔 0.08 秒显示一个未来姿态，不代表同一时刻的跟踪误差。'},
-  prediction: {file:'world-model', tag:'WORLD MODEL / OPEN-LOOP COMPARISON', title:'同一组动作，两种预测跨度。', description:'灰色为仿真执行，蓝色为同一时刻的世界模型预测。左侧每 32 步从仿真状态重新初始化，右侧仅在片段起点初始化，随后连续预测；两侧都使用已记录的实际执行动作。'},
-  roll: {file:'side-roll', tag:'POLICY VS REFERENCE / FAILURE CASE', title:'侧滚：参考与执行之间。', description:'灰色为策略执行，蓝色为同一时刻的重定向参考动作，不是世界模型。两条演示均失败：失败后灰色机器人冻结，蓝色参考继续播放至片段结束。'},
-  flip: {file:'flips', tag:'POLICY VS REFERENCE / FAILURE CASE', title:'翻转：尚未跨过的难点。', description:'90°、180° 和 360° 翻转的策略与参考对比。这三个演示均触发终止；灰色机器人随后冻结，参考继续播放。完整评测中，80k 的 54 条翻转均失败。'}
-};
-const video=$('demo-video'), hero=$('hero-video'), tabs=[...document.querySelectorAll('[data-demo]')];
-async function play(v){try{await v.play();}catch(e){if(e.name!=='AbortError'&&e.name!=='NotAllowedError') console.warn('Video playback unavailable',e.name);}}
-$('hero-play').addEventListener('click',()=>{if(hero.paused){video.pause();play(hero);}else hero.pause();});
-hero.addEventListener('play',()=>{$('hero-play').innerHTML='暂停演示 <span aria-hidden="true">Ⅱ</span>';$('hero-play').setAttribute('aria-label','暂停首页动作视频');});
-hero.addEventListener('pause',()=>{$('hero-play').innerHTML='播放演示 <span aria-hidden="true">▶</span>';$('hero-play').setAttribute('aria-label','播放首页动作视频');});
-video.addEventListener('play',()=>hero.pause());
-video.addEventListener('error',()=>{$('media-error').hidden=false;});
-video.addEventListener('loadedmetadata',()=>{video.playbackRate=Number($('speed').value);$('media-error').hidden=true;});
-function chooseDemo(tab){const d=demos[tab.dataset.demo];const wasPlaying=!video.paused;video.pause();tabs.forEach(t=>{const chosen=t===tab;t.setAttribute('aria-selected',String(chosen));t.tabIndex=chosen?0:-1;});$('demo-panel').setAttribute('aria-labelledby',tab.id);$('demo-title').textContent=d.title;$('demo-tag').textContent=d.tag;$('demo-description').textContent=d.description;video.setAttribute('aria-label',d.title);video.poster=`media/${d.file}.jpg`;video.src=`media/${d.file}.mp4`;$('media-error').hidden=true;video.load();if(wasPlaying)play(video);}
-tabs.forEach((t,i)=>{t.addEventListener('click',()=>chooseDemo(t));t.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight')next=(i+1)%tabs.length;if(e.key==='ArrowLeft')next=(i+tabs.length-1)%tabs.length;if(e.key==='Home')next=0;if(e.key==='End')next=tabs.length-1;if(next!==undefined){e.preventDefault();tabs[next].focus();chooseDemo(tabs[next]);}});});
-$('speed').addEventListener('change',()=>{video.playbackRate=Number($('speed').value);});$('restart').addEventListener('click',()=>{video.currentTime=0;play(video);});
-document.addEventListener('visibilitychange',()=>{if(document.hidden){hero.pause();video.pause();}});
-if('IntersectionObserver' in window)new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)e.target.pause();}),{threshold:0.1}).observe(hero);
+const $=id=>document.getElementById(id);
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+let catalog=null, motion='walk', wmMotion='jog', wmMode='on', failure='flip', wmChanging=false, failureChanging=false;
+const hero=$('hero-video'), mv=$('motion-video'), wv=$('wm-video'), fv=$('failure-video'), rv=$('ref-video');
+const sources=new WeakMap();
+const descriptions={on:'每一帧从当前仿真状态重新预测。四个蓝色姿态依次对应未来 0.16、0.32、0.48、0.64 秒。',hold:'2.00 秒后保持最后一个策略动作，PD 仍在工作。世界模型也保持该动作；这不是关闭电机，也不冒充官方 Policy off 的底层实现。',slip:'2.00 秒后足部摩擦降至 0.3，世界模型同步接收实际摩擦。干预前的预测不会预先知道未来的摩擦变化。'};
+function clip(slug,mode='on',kind='actual'){return catalog?.clips.find(c=>c.slug===slug&&c.mode===mode&&c.kind===kind);}
+function error(){ $('load-error').hidden=false; }
+async function play(v){try{await v.play();}catch(e){if(e.name!=='AbortError'&&e.name!=='NotAllowedError')error();}}
+function stopOthers(except){for(const v of [hero,mv,wv,fv,rv])if(!except.includes(v))v.pause();}
+function playGroup(videos){stopOthers(videos);videos.forEach(play);}
+function toggle(v,group=[v]){if(v.paused){if(v.ended)group.forEach(x=>x.currentTime=0);playGroup(group);}else group.forEach(x=>x.pause());}
+function bindButton(v,id,group=[v]){$(id).addEventListener('click',()=>toggle(v,group));v.addEventListener('play',()=>{$(id).textContent='Ⅱ';$(id).setAttribute('aria-label','暂停视频');});v.addEventListener('pause',()=>{$(id).textContent='▶';$(id).setAttribute('aria-label','播放视频');});}
+bindButton(hero,'hero-play');bindButton(mv,'motion-play');bindButton(wv,'wm-play');bindButton(fv,'failure-play',[fv,rv]);
+function still(v){if(v.readyState<2)return null;try{const c=document.createElement('canvas');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);return c.toDataURL('image/jpeg',.85);}catch{return null;}}
+async function swapVideo(v,file,poster,time=0,resume=false){
+ const token=(sources.get(v)||0)+1;sources.set(v,token);const snapshot=still(v);v.pause();v.poster=snapshot||`media/${poster}`;
+ await new Promise((resolve,reject)=>{const controller=new AbortController(),signal=controller.signal;const timer=setTimeout(()=>finish(new Error('media timeout')),45000);function finish(e){clearTimeout(timer);controller.abort();e?reject(e):resolve();}
+ v.addEventListener('error',()=>finish(new Error('media load failed')),{signal});
+ v.addEventListener('canplaythrough',()=>{if(sources.get(v)!==token){finish();return;}const target=Math.max(0,Math.min(time,v.duration-.02));if(target===0){finish();return;}v.addEventListener('seeked',()=>{if(Math.abs(v.currentTime-target)>.025)finish(new Error('Could not seek to requested frame'));else finish();},{signal,once:true});v.currentTime=target;},{signal,once:true});
+ v.preload='auto';
+ v.src=`media/${file}`;v.load();
+ });
+ if(sources.get(v)!==token)return;v.poster=`media/${poster}`;if(resume)await play(v);
+}
+function press(selector,attribute,value){document.querySelectorAll(selector).forEach(b=>b.setAttribute('aria-pressed',String(b.dataset[attribute]===value)));}
+function seconds(v){return Number.isFinite(v)?v.toFixed(2):'0.00';}
+function duration(c){return (c.reference_frames-1)/50;}
+function stateText(c,t){return c.failed&&t>=c.steps/50?'已终止 · 冻结失败状态':'';}
+function readableReason(c){return (c.failure_reason||'').replace('root_height','根高度误差').replace('root_tilt','根姿态误差').replace('+','与');}
+let motionVersion=0;
+async function chooseMotion(slug){if(!catalog)return;const version=++motionVersion;const resume=!mv.paused;motion=slug;press('[data-motion]','motion',slug);const c=clip(slug);$('motion-label').textContent=c.title;mv.setAttribute('aria-label',`${c.title}完整仿真片段`);$('motion-time').max=duration(c);$('motion-caption').textContent=`${c.name} · 80k · 从首帧执行 ${seconds(c.steps/50)} 秒，${c.failed?'触发终止':'完成片段'}。`;await swapVideo(mv,c.file,c.poster,0,false);if(version===motionVersion){mv.playbackRate=Number($('motion-speed').value);if(resume)playGroup([mv]);}}
+document.querySelectorAll('[data-motion]').forEach(b=>b.addEventListener('click',()=>chooseMotion(b.dataset.motion).catch(error)));
+$('motion-speed').addEventListener('change',()=>mv.playbackRate=Number($('motion-speed').value));$('motion-time').addEventListener('input',e=>{mv.pause();mv.currentTime=Number(e.target.value);});
+let wmVersion=0;
+async function chooseWorld(){if(!catalog)return;const version=++wmVersion;const t=wv.currentTime;const resume=!wv.paused;wmChanging=true;const c=clip(wmMotion,wmMode,'future');press('[data-mode]','mode',wmMode);$('wm-description').textContent=descriptions[wmMode];$('wm-title').textContent=c.title;$('wm-time').max=duration(c);$('wm-end').textContent=seconds(duration(c))+' s';$('wm-event').hidden=wmMode==='on';$('wm-event').style.left=`${100*2/duration(c)}%`;$('wm-event-label').textContent=wmMode==='hold'?'开始保持动作':'摩擦 0.3';wv.setAttribute('aria-label',`${c.title}，${wmMode==='on'?'策略执行':wmMode==='hold'?'保持动作':'低摩擦'}模式`);$('wm-status').textContent='正在载入';await swapVideo(wv,c.file,c.poster,Math.min(t,duration(c)),false);if(version===wmVersion){wmChanging=false;if(resume)playGroup([wv]);}}
+document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{wmMode=b.dataset.mode;chooseWorld().catch(error);}));$('wm-motion').addEventListener('change',e=>{wmMotion=e.target.value;chooseWorld().catch(error);});
+$('wm-time').addEventListener('input',e=>{wv.pause();wv.currentTime=Number(e.target.value);});$('wm-step').addEventListener('click',()=>{wv.pause();wv.currentTime=Math.min(Math.round(wv.currentTime*50+1)/50,Number($('wm-time').max));});
+let failureVersion=0;
+async function chooseFailure(slug){if(!catalog)return;const version=++failureVersion;const resume=!fv.paused;failureChanging=true;failure=slug;press('[data-failure]','failure',slug);const actual=clip(slug),ref=clip(slug,'on','reference');$('failure-time').max=duration(actual);$('failure-note').textContent=`${actual.title}在 ${seconds(actual.steps/50)} 秒触发${readableReason(actual)}终止。灰色机器人随后冻结，参考继续播放；两个视角使用相同相机，没有轨迹重对齐。`;fv.setAttribute('aria-label',`${actual.title}策略执行`);rv.setAttribute('aria-label',`${actual.title}重定向参考`);await Promise.all([swapVideo(fv,actual.file,actual.poster,0,false),swapVideo(rv,ref.file,ref.poster,0,false)]);if(version===failureVersion){failureChanging=false;if(resume)playGroup([fv,rv]);}}
+document.querySelectorAll('[data-failure]').forEach(b=>b.addEventListener('click',()=>chooseFailure(b.dataset.failure).catch(error)));$('failure-time').addEventListener('input',e=>{fv.pause();rv.pause();fv.currentTime=rv.currentTime=Number(e.target.value);});fv.addEventListener('ended',()=>rv.pause());
+function animate(){if(catalog){const m=clip(motion),w=clip(wmMotion,wmMode,'future'),f=clip(failure);const mt=Math.min(mv.currentTime,duration(m));$('motion-time').value=mt;$('motion-clock').textContent=`${seconds(mt)} / ${seconds(duration(m))} s`;$('motion-status').textContent=stateText(m,mt);
+ if(!wmChanging){const wt=Math.min(wv.currentTime,duration(w));$('wm-time').value=wt;$('wm-clock').textContent=seconds(wt)+' s';$('wm-frame').textContent=`Frame ${Math.min(Math.floor(wt*50+1e-5),w.reference_frames-1)} / ${w.reference_frames-1}`;$('wm-status').textContent=stateText(w,wt)||(wmMode==='slip'&&wt>=2?'当前摩擦 0.3':'');}
+ if(!failureChanging){const ft=Math.min(fv.currentTime,duration(f));$('failure-time').value=ft;$('failure-clock').textContent=`${seconds(ft)} / ${seconds(duration(f))} s`;$('failure-status').textContent=stateText(f,ft);if(rv.readyState>=2&&!rv.seeking&&Math.abs(rv.currentTime-fv.currentTime)>.04)rv.currentTime=fv.currentTime;}
+ }requestAnimationFrame(animate);}
+fetch('data/showcase.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(async data=>{catalog=data;await Promise.all([chooseMotion('walk'),chooseWorld(),chooseFailure('flip')]);requestAnimationFrame(animate);}).catch(error);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopOthers([]);});
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting){e.target.pause();if(e.target===fv)rv.pause();}}),{threshold:.15});[hero,mv,wv,fv].forEach(v=>observer.observe(v));}
+if(!reduced.matches)play(hero);
+document.querySelectorAll('[role=group]').forEach(group=>group.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;const buttons=[...group.querySelectorAll('button')],i=buttons.indexOf(document.activeElement);if(i<0)return;e.preventDefault();const next=buttons[(i+(e.key==='ArrowRight'?1:buttons.length-1))%buttons.length];next.focus();next.click();}));
 let checkpoints=[];
 const groups=['push_up','crawl','inchworm','lying_recovery','flip','side_roll'];
-function drawChart(selected){const svg=$('return-chart');const x=it=>52+(it-80000)/76000*610,y=v=>249-v*210;let out='';for(const v of [0,.25,.5,.75,1])out+=`<line x1="52" x2="662" y1="${y(v)}" y2="${y(v)}" stroke="#e5e9e2"/><text x="38" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#647069">${v.toFixed(2)}</text>`;out+=`<polyline points="${checkpoints.map(r=>`${x(r.iteration)},${y(r.groups.uniform.mean_norm_return)}`).join(' ')}" fill="none" stroke="#26745a" stroke-width="2.5"/>`;for(const r of checkpoints){const active=r.iteration===selected;out+=`<circle cx="${x(r.iteration)}" cy="${y(r.groups.uniform.mean_norm_return)}" r="${active?7:4}" fill="${active?'#26745a':'#fff'}" stroke="#26745a" stroke-width="2"><title>${r.iteration/1000}k: ${r.groups.uniform.mean_norm_return.toFixed(4)}</title></circle><text x="${x(r.iteration)}" y="274" text-anchor="middle" font-size="11" fill="${active?'#26745a':'#647069'}">${r.iteration/1000}k</text>`;}svg.innerHTML=out;}
+function drawChart(selected){const svg=$('return-chart');const x=it=>52+(it-80000)/76000*610,y=v=>249-v*210;let out='';for(const v of [0,.25,.5,.75,1])out+=`<line x1="52" x2="662" y1="${y(v)}" y2="${y(v)}" stroke="#e8e8ed"/><text x="38" y="${y(v)+4}" text-anchor="end" font-size="11" fill="#6e6e73">${v.toFixed(2)}</text>`;out+=`<polyline points="${checkpoints.map(r=>`${x(r.iteration)},${y(r.groups.uniform.mean_norm_return)}`).join(' ')}" fill="none" stroke="#0071e3" stroke-width="2.5"/>`;for(const r of checkpoints){const active=r.iteration===selected;out+=`<circle cx="${x(r.iteration)}" cy="${y(r.groups.uniform.mean_norm_return)}" r="${active?7:4}" fill="${active?'#0071e3':'#fff'}" stroke="#0071e3" stroke-width="2"><title>${r.iteration/1000}k: ${r.groups.uniform.mean_norm_return.toFixed(4)}</title></circle><text x="${x(r.iteration)}" y="274" text-anchor="middle" font-size="11" fill="${active?'#0071e3':'#6e6e73'}">${r.iteration/1000}k</text>`;}svg.innerHTML=out;}
 function updateResults(){const iteration=Number($('checkpoint').value),r=checkpoints.find(v=>v.iteration===iteration);if(!r)return;const g=r.groups;$('selected-label').textContent=`${iteration/1000}K CHECKPOINT`;$('metric-return').textContent=g.uniform.mean_norm_return.toFixed(4);$('metric-uniform').textContent=`${g.uniform.failed} / 2,000`;$('metric-challenge').textContent=`${g.challenge_union.failed} / 462`;$('table-checkpoint').textContent=`${iteration/1000}k`;$('group-row').replaceChildren(...groups.map(k=>{const td=document.createElement('td');td.textContent=`${g[k].failed} / ${g[k].clips}`;if(g[k].failed===g[k].clips)td.className='bad';return td;}));$('metric-note').textContent=iteration===80000?'基准 checkpoint：当前所评测主样本回报最高。':iteration===104000?'困难动作失败数最少；主样本回报仍低于 80k。':`主样本平均回报较 80k ${((g.uniform.mean_norm_return-checkpoints[0].groups.uniform.mean_norm_return)*100).toFixed(2)} 个百分点。`;drawChart(iteration);}
 $('checkpoint').addEventListener('change',updateResults);
-fetch('data/checkpoints.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{checkpoints=data;updateResults();}).catch(()=>{$('results-error').hidden=false;$('checkpoint').disabled=true;});
+fetch('data/checkpoints.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{checkpoints=data;updateResults();}).catch(()=>{error();$('checkpoint').disabled=true;});

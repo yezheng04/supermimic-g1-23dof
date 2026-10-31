@@ -29,11 +29,20 @@ def main():
             for field, value in group.items():
                 assert value == e['groups'][k][field], (r['iteration'], k, field)
     manifest = json.loads((ROOT/'release-assets.json').read_text())
-    assert len(manifest['assets']) == 5
+    assert len(manifest['assets']) >= 5
+    assert sum(a['kind'] == 'model' for a in manifest['assets']) == 1
     for asset in manifest['assets']:
         assert len(asset['sha256']) == 64 and asset['bytes'] > 0
         assert (ROOT / asset['path']).resolve().is_relative_to(ROOT)
-    print(f'PASS: {sum(bool(p) for p in paths)} tracked source files; 8 evaluation rows; 5 Release assets.')
+    showcase = json.loads((ROOT/'website/data/showcase.json').read_text())
+    videos = {a['name'] for a in manifest['assets'] if a['kind'] == 'video'}
+    assert videos == {'hero.mp4'} | {c['file'] for c in showcase['clips']}
+    assert showcase['recording']['fps'] == 50
+    for clip in showcase['clips']:
+        assert (ROOT/'website/media'/clip['poster']).is_file(), clip['poster']
+        assert clip['video_frames'] == clip['reference_frames']
+        assert clip['steps'] <= clip['reference_frames'] - 1
+    print(f'PASS: {sum(bool(p) for p in paths)} tracked source files; 8 evaluation rows; {len(manifest['assets'])} Release assets.')
 
 
 if __name__ == '__main__':

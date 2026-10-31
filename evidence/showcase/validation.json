@@ -1,0 +1,27 @@
+{
+  "fps": 50,
+  "horizon": 32,
+  "runs": 12,
+  "finite_and_terminal_freeze": true,
+  "held_actions_verified": true,
+  "friction_context_verified": true,
+  "first_predicted_action_max_error": 0.002757549285888672,
+  "pre_event_parity": [
+    {
+      "id": "jog-hold",
+      "max_pre_event_state_difference": 0.0
+    },
+    {
+      "id": "jog-slip",
+      "max_pre_event_state_difference": 0.0
+    },
+    {
+      "id": "jump-hold",
+      "max_pre_event_state_difference": 0.0
+    },
+    {
+      "id": "jump-slip",
+      "max_pre_event_state_difference": 0.0
+    }
+  ]
+}
