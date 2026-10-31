@@ -1,0 +1,34 @@
+[
+  {
+    "iteration": 80000,
+    "same_saved_config_as80k": true
+  },
+  {
+    "iteration": 104000,
+    "same_saved_config_as80k": true
+  },
+  {
+    "iteration": 112000,
+    "same_saved_config_as80k": true
+  },
+  {
+    "iteration": 120000,
+    "same_saved_config_as80k": true
+  },
+  {
+    "iteration": 128000,
+    "same_saved_config_as80k": true
+  },
+  {
+    "iteration": 140000,
+    "same_saved_config_as80k": true
+  },
+  {
+    "iteration": 152000,
+    "same_saved_config_as80k": true
+  },
+  {
+    "iteration": 156000,
+    "same_saved_config_as80k": true
+  }
+]

@@ -1,0 +1,1046 @@
+{
+  "date": "2026-10-31",
+  "source": "existing supermimic_g1_23dof research workspace",
+  "files": [
+    {
+      "path": "src/supermimic/__init__.py",
+      "sha256": "125f22c257d97507d23ebfb893b5afc51031273f46c9dbbc079800df93064111",
+      "source_sha256": "125f22c257d97507d23ebfb893b5afc51031273f46c9dbbc079800df93064111"
+    },
+    {
+      "path": "src/supermimic/checkpoints.py",
+      "sha256": "62b64ca9a983889f3e6d86b9b2501e84bbf4207cd6a9553517c0a578e3bd36de",
+      "source_sha256": "62b64ca9a983889f3e6d86b9b2501e84bbf4207cd6a9553517c0a578e3bd36de"
+    },
+    {
+      "path": "src/supermimic/cli.py",
+      "sha256": "f853b7b9d3ad4c4d758f73c4452f9fd181d00773a20af263f2e58f52f12429df",
+      "source_sha256": "f853b7b9d3ad4c4d758f73c4452f9fd181d00773a20af263f2e58f52f12429df"
+    },
+    {
+      "path": "src/supermimic/config.py",
+      "sha256": "269c8e56c789f4c7c309fc7045fae0ad8cd70cc02d4f717c3be38fbf2891ad13",
+      "source_sha256": "269c8e56c789f4c7c309fc7045fae0ad8cd70cc02d4f717c3be38fbf2891ad13"
+    },
+    {
+      "path": "src/supermimic/data/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/data/appendix_e.py",
+      "sha256": "148d516b10732d74dd31cb0900ed51d1fce71e1ab62a3312a8c16fe69a7a7ab3",
+      "source_sha256": "148d516b10732d74dd31cb0900ed51d1fce71e1ab62a3312a8c16fe69a7a7ab3"
+    },
+    {
+      "path": "src/supermimic/data/batch_schedule.py",
+      "sha256": "d9c85f7b49474c6b5ef3ea9e74caf1eac7f8cb010ecaa12fdda93147fa35bff0",
+      "source_sha256": "d9c85f7b49474c6b5ef3ea9e74caf1eac7f8cb010ecaa12fdda93147fa35bff0"
+    },
+    {
+      "path": "src/supermimic/data/motion_convert.py",
+      "sha256": "63ff66e5dd93de7dca91f8a6aabdb360ee373037dc5171246ada2b11442fa165",
+      "source_sha256": "63ff66e5dd93de7dca91f8a6aabdb360ee373037dc5171246ada2b11442fa165"
+    },
+    {
+      "path": "src/supermimic/data/packed_library.py",
+      "sha256": "583db5be16123384dce5f4a265c34a3167dba20bebdfd88b6df75cb350831190",
+      "source_sha256": "583db5be16123384dce5f4a265c34a3167dba20bebdfd88b6df75cb350831190"
+    },
+    {
+      "path": "src/supermimic/data/playback.py",
+      "sha256": "51680a6eb186c4b48ddb0518fbcff48a209dc405958adfe6ec0026841a7da1b9",
+      "source_sha256": "51680a6eb186c4b48ddb0518fbcff48a209dc405958adfe6ec0026841a7da1b9"
+    },
+    {
+      "path": "src/supermimic/data/quality.py",
+      "sha256": "b5b07d8b9d732ef2d08561954c6a81f27cec26502e76e9d7ecd6d35cffee0342",
+      "source_sha256": "b5b07d8b9d732ef2d08561954c6a81f27cec26502e76e9d7ecd6d35cffee0342"
+    },
+    {
+      "path": "src/supermimic/data/recorder.py",
+      "sha256": "32a3d8cfa3b0c5e4721ecc025adce2211cf5a3df9d7098b8bb2575b01359b7eb",
+      "source_sha256": "32a3d8cfa3b0c5e4721ecc025adce2211cf5a3df9d7098b8bb2575b01359b7eb"
+    },
+    {
+      "path": "src/supermimic/data/replay_buffer.py",
+      "sha256": "5dad1edaf97563fa719840b468c1ad7035872a1822bafc3adc9d26b55ffc4fca",
+      "source_sha256": "5dad1edaf97563fa719840b468c1ad7035872a1822bafc3adc9d26b55ffc4fca"
+    },
+    {
+      "path": "src/supermimic/data/synthetic.py",
+      "sha256": "c962e318b63c0eb56d729236afd0220905f80842886902bf21d719d29228e39c",
+      "source_sha256": "c962e318b63c0eb56d729236afd0220905f80842886902bf21d719d29228e39c"
+    },
+    {
+      "path": "src/supermimic/envs/__init__.py",
+      "sha256": "1489391ed86aefc970651989774178018a94a020830b711b2bbb9e3ac94c715d",
+      "source_sha256": "1489391ed86aefc970651989774178018a94a020830b711b2bbb9e3ac94c715d"
+    },
+    {
+      "path": "src/supermimic/envs/actions.py",
+      "sha256": "1aff867e972ba837cc66f61dced65aefc7a16430b21a9520c7a23423e7c97c24",
+      "source_sha256": "1aff867e972ba837cc66f61dced65aefc7a16430b21a9520c7a23423e7c97c24"
+    },
+    {
+      "path": "src/supermimic/envs/aligned_env.py",
+      "sha256": "cc86f245bb87d2c3d31f89549e812354526109fdba6e4c4f98600fc6790b9a03",
+      "source_sha256": "cc86f245bb87d2c3d31f89549e812354526109fdba6e4c4f98600fc6790b9a03"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/commands.py",
+      "sha256": "62c8a6b92b23c52d77a887475dded6ab540d30ec7900364656cc2b9c9cf86971",
+      "source_sha256": "62c8a6b92b23c52d77a887475dded6ab540d30ec7900364656cc2b9c9cf86971"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/motion_library.py",
+      "sha256": "f6fad02d9c7210da9c36b0c1737f96a8e608e36b53d051b0c3dab1314d43e3bf",
+      "source_sha256": "f6fad02d9c7210da9c36b0c1737f96a8e608e36b53d051b0c3dab1314d43e3bf"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/observations.py",
+      "sha256": "deeb71efb26888a854f3e47c0bdf967d3126bb990c0e44d34e23bcd26930465b",
+      "source_sha256": "deeb71efb26888a854f3e47c0bdf967d3126bb990c0e44d34e23bcd26930465b"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/rewards.py",
+      "sha256": "33a7510acd4a54a48d37e39d571c9aaf20deae3d6daa3278d0c8b487cb47a9d4",
+      "source_sha256": "33a7510acd4a54a48d37e39d571c9aaf20deae3d6daa3278d0c8b487cb47a9d4"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/terminations.py",
+      "sha256": "6335cfe6995b69b3b38d3441b7caca8156bd3b7643d2b2d6691b22276cb7a9b0",
+      "source_sha256": "6335cfe6995b69b3b38d3441b7caca8156bd3b7643d2b2d6691b22276cb7a9b0"
+    },
+    {
+      "path": "src/supermimic/envs/recorder_compat.py",
+      "sha256": "25e29606cf877984920af16df473dff83ffec0347ff4a5af9140fe90c7791de3",
+      "source_sha256": "25e29606cf877984920af16df473dff83ffec0347ff4a5af9140fe90c7791de3"
+    },
+    {
+      "path": "src/supermimic/envs/sim_context.py",
+      "sha256": "2fe865f5970c2326fc986d470a84b607aee39466d3e342a41b79cfb7a6b92b45",
+      "source_sha256": "2fe865f5970c2326fc986d470a84b607aee39466d3e342a41b79cfb7a6b92b45"
+    },
+    {
+      "path": "src/supermimic/envs/state_io.py",
+      "sha256": "b66fcd726785a8a95ff2ef31e2402c44bd2e4f51885d2167748043bf0b8c8dc6",
+      "source_sha256": "b66fcd726785a8a95ff2ef31e2402c44bd2e4f51885d2167748043bf0b8c8dc6"
+    },
+    {
+      "path": "src/supermimic/envs/tracking_env_cfg.py",
+      "sha256": "1e3d90c48aa4c89f21973ca88648b1aed57008bbf612b567ef3a044ab7b9a71e",
+      "source_sha256": "1e3d90c48aa4c89f21973ca88648b1aed57008bbf612b567ef3a044ab7b9a71e"
+    },
+    {
+      "path": "src/supermimic/eval/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/eval/benchmark.py",
+      "sha256": "9a4556cc81b84e00324c72587300d34ac1f11ef7cc8c9c1ff47103a9098850e4",
+      "source_sha256": "9a4556cc81b84e00324c72587300d34ac1f11ef7cc8c9c1ff47103a9098850e4"
+    },
+    {
+      "path": "src/supermimic/eval/viewer_adapter.py",
+      "sha256": "86e91fac0421a4cdec12f32e903dce81b4e8656721b7c4707cb3afe0cd0eabee",
+      "source_sha256": "86e91fac0421a4cdec12f32e903dce81b4e8656721b7c4707cb3afe0cd0eabee"
+    },
+    {
+      "path": "src/supermimic/imagination/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/imagination/compiled.py",
+      "sha256": "83be5834e305714deb37d04cca08087ce7f8fe31981b95060f7a5ec4377f4be0",
+      "source_sha256": "83be5834e305714deb37d04cca08087ce7f8fe31981b95060f7a5ec4377f4be0"
+    },
+    {
+      "path": "src/supermimic/imagination/objective.py",
+      "sha256": "3c93ec24c0f26db7bd4d60c5da50bc4a4d711a70a72ba0c9dfc7b078f082f774",
+      "source_sha256": "3c93ec24c0f26db7bd4d60c5da50bc4a4d711a70a72ba0c9dfc7b078f082f774"
+    },
+    {
+      "path": "src/supermimic/imagination/policy_trainer.py",
+      "sha256": "f4b8a9e4f793ddeb75fbb3c33296cd4de7006c24c973917e63a973ce0a542186",
+      "source_sha256": "f4b8a9e4f793ddeb75fbb3c33296cd4de7006c24c973917e63a973ce0a542186"
+    },
+    {
+      "path": "src/supermimic/imagination/rollout.py",
+      "sha256": "44626faba3edd50dd2bffcc82828a2265fed462ea271e53cfc7edb52b819ff06",
+      "source_sha256": "44626faba3edd50dd2bffcc82828a2265fed462ea271e53cfc7edb52b819ff06"
+    },
+    {
+      "path": "src/supermimic/kinematics/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/kinematics/g1_fk.py",
+      "sha256": "6bbb8c688503e6c8a3ca5f34a4019844f7801ff7bed8ca73b461e8ff5cb15950",
+      "source_sha256": "6bbb8c688503e6c8a3ca5f34a4019844f7801ff7bed8ca73b461e8ff5cb15950"
+    },
+    {
+      "path": "src/supermimic/kinematics/rotations.py",
+      "sha256": "e4120edd12b5fdf97a1927a6d4a14b392d2d2736308bb473f6ffa89219aa0c47",
+      "source_sha256": "e4120edd12b5fdf97a1927a6d4a14b392d2d2736308bb473f6ffa89219aa0c47"
+    },
+    {
+      "path": "src/supermimic/policy/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/policy/nets.py",
+      "sha256": "b569dfc9410928b3d28ad622ccdbde5be0581a38272bebcc34b13153e639ec13",
+      "source_sha256": "b569dfc9410928b3d28ad622ccdbde5be0581a38272bebcc34b13153e639ec13"
+    },
+    {
+      "path": "src/supermimic/retarget/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/retarget/bvh.py",
+      "sha256": "6d8c3f51259ee9954e80c574275d27aa144dbaec11980f39eddfaf9ed449fc55",
+      "source_sha256": "6d8c3f51259ee9954e80c574275d27aa144dbaec11980f39eddfaf9ed449fc55"
+    },
+    {
+      "path": "src/supermimic/retarget/collision_refine.py",
+      "sha256": "a7e98a0292e72965cd397ddc1846d4402f3e4927a8f83bb2509fec63fa2e5f7c",
+      "source_sha256": "a7e98a0292e72965cd397ddc1846d4402f3e4927a8f83bb2509fec63fa2e5f7c"
+    },
+    {
+      "path": "src/supermimic/retarget/soma_batch.py",
+      "sha256": "e032ba3cb83725aaad7489002ea369cab839491af81b90e380d6b86ea43db142",
+      "source_sha256": "e032ba3cb83725aaad7489002ea369cab839491af81b90e380d6b86ea43db142"
+    },
+    {
+      "path": "src/supermimic/robots/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/robots/assets/head_link.STL",
+      "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411",
+      "source_sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_ankle_pitch_link.STL",
+      "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d",
+      "source_sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_ankle_roll_link.STL",
+      "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f",
+      "source_sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_elbow_link.STL",
+      "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3",
+      "source_sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_hip_pitch_link.STL",
+      "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4",
+      "source_sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_hip_roll_link.STL",
+      "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf",
+      "source_sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_hip_yaw_link.STL",
+      "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b",
+      "source_sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_knee_link.STL",
+      "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477",
+      "source_sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_shoulder_pitch_link.STL",
+      "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52",
+      "source_sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_shoulder_roll_link.STL",
+      "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88",
+      "source_sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_shoulder_yaw_link.STL",
+      "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e",
+      "source_sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+    },
+    {
+      "path": "src/supermimic/robots/assets/left_wrist_roll_rubber_hand.STL",
+      "sha256": "e81030abd023bd9e4a308ef376d814a2c12d684d8a7670c335bbd5cd7809c909",
+      "source_sha256": "e81030abd023bd9e4a308ef376d814a2c12d684d8a7670c335bbd5cd7809c909"
+    },
+    {
+      "path": "src/supermimic/robots/assets/logo_link.STL",
+      "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b",
+      "source_sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+    },
+    {
+      "path": "src/supermimic/robots/assets/pelvis.STL",
+      "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31",
+      "source_sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+    },
+    {
+      "path": "src/supermimic/robots/assets/pelvis_contour_link.STL",
+      "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420",
+      "source_sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_ankle_pitch_link.STL",
+      "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9",
+      "source_sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_ankle_roll_link.STL",
+      "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5",
+      "source_sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_elbow_link.STL",
+      "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab",
+      "source_sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_hip_pitch_link.STL",
+      "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6",
+      "source_sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_hip_roll_link.STL",
+      "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6",
+      "source_sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_hip_yaw_link.STL",
+      "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668",
+      "source_sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_knee_link.STL",
+      "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8",
+      "source_sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_shoulder_pitch_link.STL",
+      "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02",
+      "source_sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_shoulder_roll_link.STL",
+      "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81",
+      "source_sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_shoulder_yaw_link.STL",
+      "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5",
+      "source_sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+    },
+    {
+      "path": "src/supermimic/robots/assets/right_wrist_roll_rubber_hand.STL",
+      "sha256": "0729aff1ac4356f9314de13a46906267642e58bc47f0d8a7f17f6590a6242ccf",
+      "source_sha256": "0729aff1ac4356f9314de13a46906267642e58bc47f0d8a7f17f6590a6242ccf"
+    },
+    {
+      "path": "src/supermimic/robots/assets/torso_link_23dof_rev_1_0.STL",
+      "sha256": "3cd0d56fde14b73c1623304684805029971c4f84b596f9914e823ca70a107fd2",
+      "source_sha256": "3cd0d56fde14b73c1623304684805029971c4f84b596f9914e823ca70a107fd2"
+    },
+    {
+      "path": "src/supermimic/robots/config.py",
+      "sha256": "7cb41f95f50aff7880681ecbc7e0b184a729bfe3520fe23d36e98a33ae4ad7e4",
+      "source_sha256": "7cb41f95f50aff7880681ecbc7e0b184a729bfe3520fe23d36e98a33ae4ad7e4"
+    },
+    {
+      "path": "src/supermimic/robots/g1_23dof.xml",
+      "sha256": "21880ce95250d5f41b16c7b11b264b3de935b1fa2a5ca6201828ccfb85159180",
+      "source_sha256": "21880ce95250d5f41b16c7b11b264b3de935b1fa2a5ca6201828ccfb85159180"
+    },
+    {
+      "path": "src/supermimic/robots/spec.py",
+      "sha256": "84c4479a0bc30190d5514353ff63ebff33687d5eef3fd861fb2b7c3c56a0db43",
+      "source_sha256": "84c4479a0bc30190d5514353ff63ebff33687d5eef3fd861fb2b7c3c56a0db43"
+    },
+    {
+      "path": "src/supermimic/scripts/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/scripts/train.py",
+      "sha256": "559dd3cad8bc7d989d8dbf7e8812c7f15fa85fc4bead0d26449dafba29a1a639",
+      "source_sha256": "559dd3cad8bc7d989d8dbf7e8812c7f15fa85fc4bead0d26449dafba29a1a639"
+    },
+    {
+      "path": "src/supermimic/training/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/training/distributed.py",
+      "sha256": "ebf2d6d37ce6102f55941c0ab328c9deb4021964c46f7bd35a8bc1bb767f5a21",
+      "source_sha256": "ebf2d6d37ce6102f55941c0ab328c9deb4021964c46f7bd35a8bc1bb767f5a21"
+    },
+    {
+      "path": "src/supermimic/training/loop.py",
+      "sha256": "ab86c267d610c674c7cd5cc8c228d7921feb26fe1c39cc44ccbfd4dfe4bee9fd",
+      "source_sha256": "ab86c267d610c674c7cd5cc8c228d7921feb26fe1c39cc44ccbfd4dfe4bee9fd"
+    },
+    {
+      "path": "src/supermimic/training/schedule.py",
+      "sha256": "3848bc4432d6f87bc81d93660dff0cbe7491122f4f0413c42808be27cef6c2ee",
+      "source_sha256": "3848bc4432d6f87bc81d93660dff0cbe7491122f4f0413c42808be27cef6c2ee"
+    },
+    {
+      "path": "src/supermimic/training/wandb_logger.py",
+      "sha256": "e3ea2349de9c629cba31f1198fc26af59a3fae1004dc6dfcf6f12840286236e3",
+      "source_sha256": "e3ea2349de9c629cba31f1198fc26af59a3fae1004dc6dfcf6f12840286236e3"
+    },
+    {
+      "path": "src/supermimic/world_model/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/supermimic/world_model/dynamics.py",
+      "sha256": "8e7c35c13e2de3d6e4985076d7307e115cb42b9008bbe5d915145416abd3568c",
+      "source_sha256": "8e7c35c13e2de3d6e4985076d7307e115cb42b9008bbe5d915145416abd3568c"
+    },
+    {
+      "path": "src/supermimic/world_model/heads.py",
+      "sha256": "ba1488db7640276cf65b24309e479a66c3314be5167b7ca7a5313b088ac5a82a",
+      "source_sha256": "ba1488db7640276cf65b24309e479a66c3314be5167b7ca7a5313b088ac5a82a"
+    },
+    {
+      "path": "src/supermimic/world_model/state_spec.py",
+      "sha256": "9ff1b21258c9d9d0d6ea9c1e2b852cd677467a2e99ba8d49dd0f3f9e43ae9b2e",
+      "source_sha256": "9ff1b21258c9d9d0d6ea9c1e2b852cd677467a2e99ba8d49dd0f3f9e43ae9b2e"
+    },
+    {
+      "path": "src/supermimic/world_model/wm_trainer.py",
+      "sha256": "04509985e4fca7e2210cac978ead260745130dd1ea3a67d904bd29ef6082d609",
+      "source_sha256": "04509985e4fca7e2210cac978ead260745130dd1ea3a67d904bd29ef6082d609"
+    },
+    {
+      "path": "src/supermimic/world_model/world_model.py",
+      "sha256": "c3730cae41e4353ddba3c3a8b04f8a5d4018dfbff0bce2722c9f00657838edcb",
+      "source_sha256": "c3730cae41e4353ddba3c3a8b04f8a5d4018dfbff0bce2722c9f00657838edcb"
+    },
+    {
+      "path": "scripts/audit_critic_gradients.py",
+      "sha256": "c425823a1312eaa80df18aba9f7a213387f62ea2fafc84d3597a1fdbc6cbe518",
+      "source_sha256": "c425823a1312eaa80df18aba9f7a213387f62ea2fafc84d3597a1fdbc6cbe518"
+    },
+    {
+      "path": "scripts/audit_native23_retargeting.py",
+      "sha256": "c9a0de47c1928ce0557d06f74a8c8b283bfc71db93b7043fc3a75b3bfc086ffb",
+      "source_sha256": "c9a0de47c1928ce0557d06f74a8c8b283bfc71db93b7043fc3a75b3bfc086ffb"
+    },
+    {
+      "path": "scripts/audit_training_alignment.py",
+      "sha256": "074d307f741d42148c44257d1258a48760569faac5397a5970b44dcc4c8e20ee",
+      "source_sha256": "074d307f741d42148c44257d1258a48760569faac5397a5970b44dcc4c8e20ee"
+    },
+    {
+      "path": "scripts/benchmark_soma_batch.py",
+      "sha256": "24aba31ddcc3d7fea9d8017b2b94c6b86e3d9998adfdf3cdf9951d09e0f81131",
+      "source_sha256": "24aba31ddcc3d7fea9d8017b2b94c6b86e3d9998adfdf3cdf9951d09e0f81131"
+    },
+    {
+      "path": "scripts/bones_batch_worker.py",
+      "sha256": "554b43be08be7fdf424f78e9048dc82023ef30600782ead7247790775de92740",
+      "source_sha256": "554b43be08be7fdf424f78e9048dc82023ef30600782ead7247790775de92740"
+    },
+    {
+      "path": "scripts/build_soma_urdf_config.py",
+      "sha256": "3f40a237a6dfef5e0ff9e034b3704eed55d3e1dfd013ded12db81b92b41e6a0e",
+      "source_sha256": "3f40a237a6dfef5e0ff9e034b3704eed55d3e1dfd013ded12db81b92b41e6a0e"
+    },
+    {
+      "path": "scripts/check_repository.py",
+      "sha256": "8eddb9ad79c6adaffe95db04df4d35ca1aadffc71b66591bfd0d186b23ba375e",
+      "source_sha256": null
+    },
+    {
+      "path": "scripts/check_training_host.sh",
+      "sha256": "7f1c7f7a582a35f035069b935d065eb3d73d0575450dd5bff24118e8c528e95c",
+      "source_sha256": "7f1c7f7a582a35f035069b935d065eb3d73d0575450dd5bff24118e8c528e95c"
+    },
+    {
+      "path": "scripts/curate_library.py",
+      "sha256": "63ceeef96f342b03da6b699e02fb54ff178f0972735829395a5bea3f0ffd7216",
+      "source_sha256": "63ceeef96f342b03da6b699e02fb54ff178f0972735829395a5bea3f0ffd7216"
+    },
+    {
+      "path": "scripts/diag_drift.py",
+      "sha256": "52958d31e421f4b20674d4bda7bdee4e452542a47e4cb43fe74afcf892cd60f5",
+      "source_sha256": "52958d31e421f4b20674d4bda7bdee4e452542a47e4cb43fe74afcf892cd60f5"
+    },
+    {
+      "path": "scripts/download_bones_seed.py",
+      "sha256": "3af97d9bbcc2045bea7fe23f221b6596fb5c7e546b4c20a942fc3c3a8e247271",
+      "source_sha256": "3af97d9bbcc2045bea7fe23f221b6596fb5c7e546b4c20a942fc3c3a8e247271"
+    },
+    {
+      "path": "scripts/download_demo_assets.py",
+      "sha256": "d81f388fbaad8afc5097cc32075434ffdd6d75ca9d002c229e84f93d4b1a047e",
+      "source_sha256": null
+    },
+    {
+      "path": "scripts/download_torch_bootstrap.py",
+      "sha256": "ab6daae7baa341396cb229f19f7a8cca2353b6c67a1fcfde7fb4dae2ada249bf",
+      "source_sha256": "ab6daae7baa341396cb229f19f7a8cca2353b6c67a1fcfde7fb4dae2ada249bf"
+    },
+    {
+      "path": "scripts/eval_push.py",
+      "sha256": "60809d2304208b13e2cca4fb6ae461f526d90bd8507b8841e113e6d990a3682a",
+      "source_sha256": "60809d2304208b13e2cca4fb6ae461f526d90bd8507b8841e113e6d990a3682a"
+    },
+    {
+      "path": "scripts/evaluate_checkpoint_series.py",
+      "sha256": "e099690df2a8e9abfa04d23c6c8fa4dd874a84cd288f4cf29a6e93e79a2bf616",
+      "source_sha256": "e099690df2a8e9abfa04d23c6c8fa4dd874a84cd288f4cf29a6e93e79a2bf616"
+    },
+    {
+      "path": "scripts/evaluate_flip_diagnostics.py",
+      "sha256": "cd0dd853e5e987b21928b6ad9db36c6efa2ad2c0128d6c7ec1ba27c9b32df4cd",
+      "source_sha256": "cd0dd853e5e987b21928b6ad9db36c6efa2ad2c0128d6c7ec1ba27c9b32df4cd"
+    },
+    {
+      "path": "scripts/evaluate_post100k.py",
+      "sha256": "8557543bc6c6acb492afb02c4e6f762dc7e182408298a0e93e0f3bf98bfb2c30",
+      "source_sha256": "8557543bc6c6acb492afb02c4e6f762dc7e182408298a0e93e0f3bf98bfb2c30"
+    },
+    {
+      "path": "scripts/evaluate_soma_urdf.py",
+      "sha256": "624b85ce4760188f234f4b400f495be26acc85c63dbc571d98fa7284a31094fe",
+      "source_sha256": "624b85ce4760188f234f4b400f495be26acc85c63dbc571d98fa7284a31094fe"
+    },
+    {
+      "path": "scripts/optimize_soma_urdf.py",
+      "sha256": "187e39979ec97c095578850897d5b46094b0b9b62a1c92bfd41f3dffa9178db2",
+      "source_sha256": "187e39979ec97c095578850897d5b46094b0b9b62a1c92bfd41f3dffa9178db2"
+    },
+    {
+      "path": "scripts/play.py",
+      "sha256": "3cf6a9470741ad47c5772fe2fcf50e0f8f5e35a6ede4342e83b25b0c6010f77b",
+      "source_sha256": "3cf6a9470741ad47c5772fe2fcf50e0f8f5e35a6ede4342e83b25b0c6010f77b"
+    },
+    {
+      "path": "scripts/prepare_bones_seed.py",
+      "sha256": "f7ed8070f3717a3f7e5e661ce311b2492cbd2de88c989dc758075705f5416525",
+      "source_sha256": "f7ed8070f3717a3f7e5e661ce311b2492cbd2de88c989dc758075705f5416525"
+    },
+    {
+      "path": "scripts/prepare_bones_seed_batch.py",
+      "sha256": "264a4a1f8311eb6cbf83ab382151b45c3290c7b9aa6e05c5e83fd008691d7d03",
+      "source_sha256": "264a4a1f8311eb6cbf83ab382151b45c3290c7b9aa6e05c5e83fd008691d7d03"
+    },
+    {
+      "path": "scripts/prepare_training_splits.py",
+      "sha256": "8d2787f266e1f1f77d35af73f78ad571a0fb2eba31c2f67f3d87b3f82e44418a",
+      "source_sha256": "8d2787f266e1f1f77d35af73f78ad571a0fb2eba31c2f67f3d87b3f82e44418a"
+    },
+    {
+      "path": "scripts/probe_nccl.py",
+      "sha256": "befa2dbb08ba9d40e02125c3411de38d58748e655468995f4c38ec72d9d9813c",
+      "source_sha256": "befa2dbb08ba9d40e02125c3411de38d58748e655468995f4c38ec72d9d9813c"
+    },
+    {
+      "path": "scripts/probe_paper_scale.py",
+      "sha256": "6b4cae75abe85da10bdb63edfc77c233dfe444086d504bd3693c5260eac677c0",
+      "source_sha256": "6b4cae75abe85da10bdb63edfc77c233dfe444086d504bd3693c5260eac677c0"
+    },
+    {
+      "path": "scripts/record_future_trail_demo.py",
+      "sha256": "645ec06e629cfb369ea665f0bc88c32f7362182d38876bb1ad822976ce3b116b",
+      "source_sha256": "645ec06e629cfb369ea665f0bc88c32f7362182d38876bb1ad822976ce3b116b"
+    },
+    {
+      "path": "scripts/record_world_model_demo.py",
+      "sha256": "3c106db8e02fafe4fb8ac43211cdce4cefce49d27ce3ef023da6429e30c39f84",
+      "source_sha256": "3c106db8e02fafe4fb8ac43211cdce4cefce49d27ce3ef023da6429e30c39f84"
+    },
+    {
+      "path": "scripts/render_future_trail_demo.py",
+      "sha256": "9888f7d6026381f83b33928eccd530a71a4c81e6eda005ecfe130ee929d96835",
+      "source_sha256": "9888f7d6026381f83b33928eccd530a71a4c81e6eda005ecfe130ee929d96835"
+    },
+    {
+      "path": "scripts/render_reference.py",
+      "sha256": "c035c18cea009a78c4b270506318c715d88ee25c020efb2deb70601cea466f23",
+      "source_sha256": "c035c18cea009a78c4b270506318c715d88ee25c020efb2deb70601cea466f23"
+    },
+    {
+      "path": "scripts/render_reference_comparison_demo.py",
+      "sha256": "59934d4e4dcb0c32f69514e4d7117b6f11d0764ae407b1fd407bc7b2febb5e8d",
+      "source_sha256": "59934d4e4dcb0c32f69514e4d7117b6f11d0764ae407b1fd407bc7b2febb5e8d"
+    },
+    {
+      "path": "scripts/render_soma_overlay.py",
+      "sha256": "de7405c34e471996520ff09a41ecf29752841a5ade2bc5265ad348de4ce60aad",
+      "source_sha256": "de7405c34e471996520ff09a41ecf29752841a5ade2bc5265ad348de4ce60aad"
+    },
+    {
+      "path": "scripts/render_soma_urdf_overlay.py",
+      "sha256": "b3ee269936737a5af8154075318f1d38818d1e088102a44d93d9d63a844adae0",
+      "source_sha256": "b3ee269936737a5af8154075318f1d38818d1e088102a44d93d9d63a844adae0"
+    },
+    {
+      "path": "scripts/render_world_model_demo.py",
+      "sha256": "2fbf7bfefa2ccfc4dc7a61c0563b7b63a4c0b6c0c92674c60f173ffec4cfc5c8",
+      "source_sha256": "2fbf7bfefa2ccfc4dc7a61c0563b7b63a4c0b6c0c92674c60f173ffec4cfc5c8"
+    },
+    {
+      "path": "scripts/resume_bones_seed_v4.sh",
+      "sha256": "193ab854ca8b946e51edbf38be4bc7fd7237f3a1010baab773d883ed325c209c",
+      "source_sha256": "193ab854ca8b946e51edbf38be4bc7fd7237f3a1010baab773d883ed325c209c"
+    },
+    {
+      "path": "scripts/retarget_soma.py",
+      "sha256": "58286c9c2c6ead1fe78bdd71c76fe30cbec8efed1db430656623d1c6d2308a7c",
+      "source_sha256": "58286c9c2c6ead1fe78bdd71c76fe30cbec8efed1db430656623d1c6d2308a7c"
+    },
+    {
+      "path": "scripts/retarget_soma_official.py",
+      "sha256": "a792e1e050792e0b1bd63c26a2df575eff5a3e3d26edcbce57ab1ab5e057c69c",
+      "source_sha256": "a792e1e050792e0b1bd63c26a2df575eff5a3e3d26edcbce57ab1ab5e057c69c"
+    },
+    {
+      "path": "scripts/run_bones_pilot.py",
+      "sha256": "5c931263961c15466b916b30058458d5f58dd881fcfdafe11e89bffedeba76db",
+      "source_sha256": "5c931263961c15466b916b30058458d5f58dd881fcfdafe11e89bffedeba76db"
+    },
+    {
+      "path": "scripts/run_remote_training.sh",
+      "sha256": "ea263fac5a251358d390dc2d0ec2783393d2225a2f226742baf245e1a1539317",
+      "source_sha256": "ea263fac5a251358d390dc2d0ec2783393d2225a2f226742baf245e1a1539317"
+    },
+    {
+      "path": "scripts/run_soma_urdf_comparison.py",
+      "sha256": "ca26e2ba6fe5686ce061fa0ce31d33ecbc2e3100a9d49334e3fca4dbb0c45d33",
+      "source_sha256": "ca26e2ba6fe5686ce061fa0ce31d33ecbc2e3100a9d49334e3fca4dbb0c45d33"
+    },
+    {
+      "path": "scripts/setup.sh",
+      "sha256": "3dbc63273e4dabe301368b23527eaa124a7c5088cb5b3afa42534bf0d2519f1b",
+      "source_sha256": "3c379aa98603d0eefb3393e93d941ddfed1a6a47b1d638510ea71f36823e2fb4"
+    },
+    {
+      "path": "scripts/setup_training_host.sh",
+      "sha256": "b00e6c3d6d0fb9d6db9a2ac40fe477a39a38b8d2d80fdd4a75fca7453b9aa1f3",
+      "source_sha256": "2d882a06dd24f1f3febae761e7a8f06e9efa22ef0d00fb1cf936845ff09e1e05"
+    },
+    {
+      "path": "scripts/summarize_flip_diagnostics.py",
+      "sha256": "b5acce256260eabf3397786e4eba7f64263bd4461bbe7055a8075102b7b681df",
+      "source_sha256": "b5acce256260eabf3397786e4eba7f64263bd4461bbe7055a8075102b7b681df"
+    },
+    {
+      "path": "scripts/summarize_post100k.py",
+      "sha256": "dd3d0c440f1ef8a0be9dbab7d4d040ee20b8fb2716df141a995127d05bdbd132",
+      "source_sha256": "dd3d0c440f1ef8a0be9dbab7d4d040ee20b8fb2716df141a995127d05bdbd132"
+    },
+    {
+      "path": "scripts/train_bones_2gpu.sh",
+      "sha256": "ab074173b7a99342bd24df017af76d5a2a1e63ebd582d507d84ed0f104e05664",
+      "source_sha256": "ab074173b7a99342bd24df017af76d5a2a1e63ebd582d507d84ed0f104e05664"
+    },
+    {
+      "path": "scripts/training_runtime.sh",
+      "sha256": "588e41ea3e33c2dff623285082152efa3042022205d6d9eea559aebd84a36ad3",
+      "source_sha256": "588e41ea3e33c2dff623285082152efa3042022205d6d9eea559aebd84a36ad3"
+    },
+    {
+      "path": "scripts/try_soma_examples.py",
+      "sha256": "2aa40a2ff4a24b1814761799e48c115fe16438b41e6b901d466cacbe68a59a12",
+      "source_sha256": "2aa40a2ff4a24b1814761799e48c115fe16438b41e6b901d466cacbe68a59a12"
+    },
+    {
+      "path": "scripts/view_soma_native23.py",
+      "sha256": "64d1644a80a51d5bd371f187964fc48807100cbc617e37c585ac5975035906af",
+      "source_sha256": "64d1644a80a51d5bd371f187964fc48807100cbc617e37c585ac5975035906af"
+    },
+    {
+      "path": "scripts/view_soma_native23.sh",
+      "sha256": "7dd0842238165a6d98f78f39af43535fe09e184f3e4056051fc08220c1ec60f0",
+      "source_sha256": "7dd0842238165a6d98f78f39af43535fe09e184f3e4056051fc08220c1ec60f0"
+    },
+    {
+      "path": "scripts/view_soma_urdf_config.py",
+      "sha256": "f55bf5f4686601de29d90bd52d89440a0aec649e2b9f47ae9448c47e064ab440",
+      "source_sha256": "f55bf5f4686601de29d90bd52d89440a0aec649e2b9f47ae9448c47e064ab440"
+    },
+    {
+      "path": "configs/bones_2gpu_preflight.json",
+      "sha256": "7ae13cd8ac05a4fc8d1922420bb49debd48058a4286fe573ece9516f3b806723",
+      "source_sha256": "7ae13cd8ac05a4fc8d1922420bb49debd48058a4286fe573ece9516f3b806723"
+    },
+    {
+      "path": "configs/bones_full_2gpu.json",
+      "sha256": "f6b5f91594ff5c902275b14105050053af5918a8a5a0d5cc522ee325a39ca2b1",
+      "source_sha256": "f6b5f91594ff5c902275b14105050053af5918a8a5a0d5cc522ee325a39ca2b1"
+    },
+    {
+      "path": "configs/bones_full_v1.json",
+      "sha256": "f2dbc05365b0e6ce9fb2540acd38a5c44153181ec36021115b975753a5d30f0d",
+      "source_sha256": "f2dbc05365b0e6ce9fb2540acd38a5c44153181ec36021115b975753a5d30f0d"
+    },
+    {
+      "path": "configs/bones_pilot_extended_v1.json",
+      "sha256": "5b2b4ead0026e51b80c4f172dd5297046b36e87eeb2915030c5e63feedac39ba",
+      "source_sha256": "5b2b4ead0026e51b80c4f172dd5297046b36e87eeb2915030c5e63feedac39ba"
+    },
+    {
+      "path": "configs/bones_pilot_v1.json",
+      "sha256": "76c9fa8580a810fe7895fa72d2e09390e889e17eb11dd1d0a65ecac779047ea4",
+      "source_sha256": "76c9fa8580a810fe7895fa72d2e09390e889e17eb11dd1d0a65ecac779047ea4"
+    },
+    {
+      "path": "configs/bones_seed_preparation.json",
+      "sha256": "431254605a78e454aadf75c182370649f643a3cd3eed27f77c6f673aaa31366e",
+      "source_sha256": "431254605a78e454aadf75c182370649f643a3cd3eed27f77c6f673aaa31366e"
+    },
+    {
+      "path": "configs/paper.json",
+      "sha256": "7f30fbb299eb9470c1369760ce8259b6d8bc538ff27e167059f85d0d6dd4cec6",
+      "source_sha256": "7f30fbb299eb9470c1369760ce8259b6d8bc538ff27e167059f85d0d6dd4cec6"
+    },
+    {
+      "path": "configs/remote_environment_constraints.txt",
+      "sha256": "6d517a1f34913bf83b209369b2a13db7c616d2791376569a23381ccbb7064ab0",
+      "source_sha256": "6d517a1f34913bf83b209369b2a13db7c616d2791376569a23381ccbb7064ab0"
+    },
+    {
+      "path": "configs/rtx5080.json",
+      "sha256": "ce8943f324f613d4011e2825b2a270ebbe097a9d507630e14ce8d25dfa7789bd",
+      "source_sha256": "ce8943f324f613d4011e2825b2a270ebbe097a9d507630e14ce8d25dfa7789bd"
+    },
+    {
+      "path": "configs/smoke.json",
+      "sha256": "1eeac8170349df2948d9f850c1d3724e727aeca4954cbdc99625449ce473b4ff",
+      "source_sha256": "1eeac8170349df2948d9f850c1d3724e727aeca4954cbdc99625449ce473b4ff"
+    },
+    {
+      "path": "configs/soma_native23_configurator.json",
+      "sha256": "06cd4ac61b0a83831aebab5739986d59afe0899ca99a6823a17797761645f6cb",
+      "source_sha256": "1f6871f044380d55a6a81f42b8e52d13507b635ddb8d471233de466e3853fdd9"
+    },
+    {
+      "path": "configs/soma_native23_converter.json",
+      "sha256": "fa4487ed93236511bf82cc6b647a08e8c14366d57aa8a7e46bb325b2dd27078e",
+      "source_sha256": "c607064fdbb1f5e9ef6d63d2819da3a15f41ec71a9d9a40b961105f65fd9c90c"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/SOURCE_LICENSE",
+      "sha256": "84aac59fd3246e3ddc49d1387644e8fcf43b0def4f0b9fe687f372e90446df2d",
+      "source_sha256": "84aac59fd3246e3ddc49d1387644e8fcf43b0def4f0b9fe687f372e90446df2d"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/SOURCE_README.md",
+      "sha256": "0f3d66629ca904b3d01d8b20186b26d17cca513d7217f66649dc68523aa94f43",
+      "source_sha256": "0f3d66629ca904b3d01d8b20186b26d17cca513d7217f66649dc68523aa94f43"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/calibration_audit.json",
+      "sha256": "2e1d4cdba50a8c76d9508c0565f1441d2a84b5a4c7f8906415e4c84d589b6f22",
+      "source_sha256": "ef744985de23d05628423c040bdad6c6467658fb764a3864eab777e48ea9923c"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/configs/post_processing.json",
+      "sha256": "cbf7537a843488cc7e80f948059a98ea1d7e73296b71f5b5ba966ac5141acbc1",
+      "source_sha256": "cbf7537a843488cc7e80f948059a98ea1d7e73296b71f5b5ba966ac5141acbc1"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/configs/retargeter.json",
+      "sha256": "48dce6a8eadef92144134e7b91b0db5fd7e37686b143e449a9534ad8519edf07",
+      "source_sha256": "48dce6a8eadef92144134e7b91b0db5fd7e37686b143e449a9534ad8519edf07"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/configs/scaler.json",
+      "sha256": "9becc09621313f8b4767fac7f82f6ba8e4b4b98a15556e50614ba96d4067fc33",
+      "source_sha256": "9becc09621313f8b4767fac7f82f6ba8e4b4b98a15556e50614ba96d4067fc33"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/g1_23dof_rev_1_0.urdf",
+      "sha256": "2fcf7be763ba8be2b229abcc6c3861c64fcd20aa82b335ab93f5e4ceb3013701",
+      "source_sha256": "2fcf7be763ba8be2b229abcc6c3861c64fcd20aa82b335ab93f5e4ceb3013701"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/head_link.STL",
+      "sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411",
+      "source_sha256": "005fb67fbd3eff94aa8bf4a6e83238174e9f91b6721f7111594322f223724411"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_ankle_pitch_link.STL",
+      "sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d",
+      "source_sha256": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_ankle_roll_link.STL",
+      "sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f",
+      "source_sha256": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_elbow_link.STL",
+      "sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3",
+      "source_sha256": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_hip_pitch_link.STL",
+      "sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4",
+      "source_sha256": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_hip_roll_link.STL",
+      "sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf",
+      "source_sha256": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_hip_yaw_link.STL",
+      "sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b",
+      "source_sha256": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_knee_link.STL",
+      "sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477",
+      "source_sha256": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_shoulder_pitch_link.STL",
+      "sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52",
+      "source_sha256": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_shoulder_roll_link.STL",
+      "sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88",
+      "source_sha256": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_shoulder_yaw_link.STL",
+      "sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e",
+      "source_sha256": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/left_wrist_roll_rubber_hand.STL",
+      "sha256": "e81030abd023bd9e4a308ef376d814a2c12d684d8a7670c335bbd5cd7809c909",
+      "source_sha256": "e81030abd023bd9e4a308ef376d814a2c12d684d8a7670c335bbd5cd7809c909"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/logo_link.STL",
+      "sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b",
+      "source_sha256": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/pelvis.STL",
+      "sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31",
+      "source_sha256": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/pelvis_contour_link.STL",
+      "sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420",
+      "source_sha256": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_ankle_pitch_link.STL",
+      "sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9",
+      "source_sha256": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_ankle_roll_link.STL",
+      "sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5",
+      "source_sha256": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_elbow_link.STL",
+      "sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab",
+      "source_sha256": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_hip_pitch_link.STL",
+      "sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6",
+      "source_sha256": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_hip_roll_link.STL",
+      "sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6",
+      "source_sha256": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_hip_yaw_link.STL",
+      "sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668",
+      "source_sha256": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_knee_link.STL",
+      "sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8",
+      "source_sha256": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_shoulder_pitch_link.STL",
+      "sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02",
+      "source_sha256": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_shoulder_roll_link.STL",
+      "sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81",
+      "source_sha256": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_shoulder_yaw_link.STL",
+      "sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5",
+      "source_sha256": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/right_wrist_roll_rubber_hand.STL",
+      "sha256": "0729aff1ac4356f9314de13a46906267642e58bc47f0d8a7f17f6590a6242ccf",
+      "source_sha256": "0729aff1ac4356f9314de13a46906267642e58bc47f0d8a7f17f6590a6242ccf"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/desc/meshes/torso_link_23dof_rev_1_0.STL",
+      "sha256": "3cd0d56fde14b73c1623304684805029971c4f84b596f9914e823ca70a107fd2",
+      "source_sha256": "3cd0d56fde14b73c1623304684805029971c4f84b596f9914e823ca70a107fd2"
+    },
+    {
+      "path": "assets/robotics/unitree/g1_23dof_urdf_v1/manifest.json",
+      "sha256": "739e1b6d38152695c41cf3e8d9d51a80e6ab89e29664dda99082d380a839dbb1",
+      "source_sha256": "739e1b6d38152695c41cf3e8d9d51a80e6ab89e29664dda99082d380a839dbb1"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "28a90a06f63442ce2294f9dba894b347049ef2cab536666b6c30627f8c3d1c9f",
+      "source_sha256": "28a90a06f63442ce2294f9dba894b347049ef2cab536666b6c30627f8c3d1c9f"
+    },
+    {
+      "path": "tests/fixtures/synthetic_lafan.bvh",
+      "sha256": "8bbff4f4a054f88660ecc4631c31285b3e5fae8a46f732d0480396781721d7a4",
+      "source_sha256": "8bbff4f4a054f88660ecc4631c31285b3e5fae8a46f732d0480396781721d7a4"
+    },
+    {
+      "path": "tests/test_aligned_env.py",
+      "sha256": "956f80314f221d9d32b6a490b7ea0119c905002531bad71399131e79df21b1ef",
+      "source_sha256": "956f80314f221d9d32b6a490b7ea0119c905002531bad71399131e79df21b1ef"
+    },
+    {
+      "path": "tests/test_appendix_e.py",
+      "sha256": "68d564ad5f8322103534a3dfc9d222ded2d940379146cd8adefb5461b2081cee",
+      "source_sha256": "68d564ad5f8322103534a3dfc9d222ded2d940379146cd8adefb5461b2081cee"
+    },
+    {
+      "path": "tests/test_batch_schedule.py",
+      "sha256": "fcd8934402227e27e166087aa8176158462db5cd6c7c5b83de93c307d2af8ee5",
+      "source_sha256": "fcd8934402227e27e166087aa8176158462db5cd6c7c5b83de93c307d2af8ee5"
+    },
+    {
+      "path": "tests/test_bones_preparation.py",
+      "sha256": "b01e94b19df26435e3524acf248ac906ece5e83f761bc11639d8db81406267f6",
+      "source_sha256": "b01e94b19df26435e3524acf248ac906ece5e83f761bc11639d8db81406267f6"
+    },
+    {
+      "path": "tests/test_bvh_timing.py",
+      "sha256": "d77c2604be08ebf338e344975b19b8842113dff5f88c5e582af21f7129eddeeb",
+      "source_sha256": "d77c2604be08ebf338e344975b19b8842113dff5f88c5e582af21f7129eddeeb"
+    },
+    {
+      "path": "tests/test_checkpoint_series.py",
+      "sha256": "d9686f89d4836a9b34a55e7b66bde6790af38acf12b41e940a536c3e76b4833f",
+      "source_sha256": "d9686f89d4836a9b34a55e7b66bde6790af38acf12b41e940a536c3e76b4833f"
+    },
+    {
+      "path": "tests/test_collision_refine.py",
+      "sha256": "efb92c58b353e925f98186ddf3e7da7e95423df16d8892902de023fc6c04f53d",
+      "source_sha256": "efb92c58b353e925f98186ddf3e7da7e95423df16d8892902de023fc6c04f53d"
+    },
+    {
+      "path": "tests/test_compact_reference.py",
+      "sha256": "72bd802ce49dc451abec120b083db2bc83a1e8ca9ed4b42b1a007538ee7436b5",
+      "source_sha256": "72bd802ce49dc451abec120b083db2bc83a1e8ca9ed4b42b1a007538ee7436b5"
+    },
+    {
+      "path": "tests/test_compiled_parity.py",
+      "sha256": "a73714cd82ae8dcd82a6382201746e5fb31e4b556b2f1125b1ae1e4b33753813",
+      "source_sha256": "a73714cd82ae8dcd82a6382201746e5fb31e4b556b2f1125b1ae1e4b33753813"
+    },
+    {
+      "path": "tests/test_critic_bootstrap_audit.py",
+      "sha256": "8a618d87028d6c25d24cb41ea30f27d30372d6d3a02af3565db6be975515ec4d",
+      "source_sha256": "8a618d87028d6c25d24cb41ea30f27d30372d6d3a02af3565db6be975515ec4d"
+    },
+    {
+      "path": "tests/test_g1_fk.py",
+      "sha256": "e4fd0c8f5813855b56be07f9cf3e1fc221e084235b74ec524e37a548ae876a73",
+      "source_sha256": "e4fd0c8f5813855b56be07f9cf3e1fc221e084235b74ec524e37a548ae876a73"
+    },
+    {
+      "path": "tests/test_imagination.py",
+      "sha256": "28ca1b49b40146f44bcd2313edec2471ffef738e6708ff4839550f80f2259ba5",
+      "source_sha256": "28ca1b49b40146f44bcd2313edec2471ffef738e6708ff4839550f80f2259ba5"
+    },
+    {
+      "path": "tests/test_packed_benchmark.py",
+      "sha256": "58434ae9edf0323dad2cd81624bd0e4821170fc37c02315b146240715ee75dec",
+      "source_sha256": "58434ae9edf0323dad2cd81624bd0e4821170fc37c02315b146240715ee75dec"
+    },
+    {
+      "path": "tests/test_packed_library.py",
+      "sha256": "62ebef5e3ac841b7f9718a00b3bd907d868f2fae95c80596a1083a388e3de87b",
+      "source_sha256": "62ebef5e3ac841b7f9718a00b3bd907d868f2fae95c80596a1083a388e3de87b"
+    },
+    {
+      "path": "tests/test_replay_labels.py",
+      "sha256": "0838450a35e222f449c433e480a46680072482c6c7e1939b453c4a694d866933",
+      "source_sha256": "0838450a35e222f449c433e480a46680072482c6c7e1939b453c4a694d866933"
+    },
+    {
+      "path": "tests/test_time_alignment.py",
+      "sha256": "4cb4137b7299741ba6ad1540f84fad1ee76ccfd78c57a41ae67a80d469b76b52",
+      "source_sha256": "4cb4137b7299741ba6ad1540f84fad1ee76ccfd78c57a41ae67a80d469b76b52"
+    },
+    {
+      "path": "tests/test_training_launch.py",
+      "sha256": "518f1f3e273fd4ea0605520a4cf31e8c28fd027ee3ee60fed71ddf560f0c2e2e",
+      "source_sha256": "518f1f3e273fd4ea0605520a4cf31e8c28fd027ee3ee60fed71ddf560f0c2e2e"
+    },
+    {
+      "path": "tests/test_training_loop.py",
+      "sha256": "7d586ccf035950b9f854a8c45c2f9abb8250ec36642eeea17cbdce6836ddc6be",
+      "source_sha256": "7d586ccf035950b9f854a8c45c2f9abb8250ec36642eeea17cbdce6836ddc6be"
+    },
+    {
+      "path": "tests/test_training_splits.py",
+      "sha256": "d18c92891ab1a94d1196309840e60627e8e38df3c53489a3e87ee99fd8a5e984",
+      "source_sha256": "d18c92891ab1a94d1196309840e60627e8e38df3c53489a3e87ee99fd8a5e984"
+    },
+    {
+      "path": "tests/test_wandb_logger.py",
+      "sha256": "ef6df1c722a04cbe32436811a43335df9f9c026949341deec4f0676ff820e82d",
+      "source_sha256": "ef6df1c722a04cbe32436811a43335df9f9c026949341deec4f0676ff820e82d"
+    },
+    {
+      "path": "tests/test_world_model.py",
+      "sha256": "5218febb50ee9330378d063f3c603c055fb18bf3aff59deeb85366b4922ec088",
+      "source_sha256": "5218febb50ee9330378d063f3c603c055fb18bf3aff59deeb85366b4922ec088"
+    },
+    {
+      "path": "tests/test_world_model_demo.py",
+      "sha256": "1971497c64427b2e083b9df34a16a7e8cc266722c560220f09c53db5789e4245",
+      "source_sha256": "1971497c64427b2e083b9df34a16a7e8cc266722c560220f09c53db5789e4245"
+    }
+  ]
+}

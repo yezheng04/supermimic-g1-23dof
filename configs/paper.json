@@ -1,0 +1,7 @@
+{
+  "run_name": "g1_23dof_paper_scale",
+  "data": {"npz_dir": "data/npz/train"},
+  "env": {"paper_protocol": true, "compact_library": true},
+  "wm_trainer": {"compile": null},
+  "policy_trainer": {"compile": null}
+}

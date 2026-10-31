@@ -1,0 +1,31 @@
+"""GAE targets, policy objective, and a short end-to-end training smoke run."""
+
+from pathlib import Path
+
+import numpy as np
+import pytest
+import torch
+
+ROOT = Path(__file__).resolve().parents[1]
+NPZ = ROOT / "data/npz/lafan1"
+
+
+def test_gae_targets_match_hand_computation():
+    from supermimic.imagination.objective import gae_targets
+
+    H, n = 4, 3
+    g, lam = 0.9, 0.8
+    torch.manual_seed(0)
+    r = torch.rand(H, n)
+    d = torch.rand(H, n) * 0.3
+    V = torch.rand(H + 1, n)
+    out = gae_targets(r, d, V, g, lam)
+    R = V[H].clone()
+    for t in range(H - 1, -1, -1):
+        R = r[t] + g * (1 - d[t]) * ((1 - lam) * V[t + 1] + lam * R)
+        np.testing.assert_allclose(out[t].numpy(), R.numpy(), atol=1e-6)
+    # lambda = 1, d = 0 -> Monte-Carlo discounted return with bootstrap.
+    out1 = gae_targets(r, torch.zeros_like(d), V, g, 1.0)
+    mc = r[0] + g * r[1] + g**2 * r[2] + g**3 * r[3] + g**4 * V[4]
+    np.testing.assert_allclose(out1[0].numpy(), mc.numpy(), atol=1e-6)
+

@@ -1,0 +1,779 @@
+{
+  "upstream_commit": "ba6105349069bf040f1fdad60873d13138d505a2",
+  "literal_defaults_checked": 76,
+  "checks": [
+    {
+      "source": "world_model/state_spec.py",
+      "cls": "StateSpecCfg",
+      "key": "dt",
+      "upstream": 0.02,
+      "local": 0.02,
+      "match": true
+    },
+    {
+      "source": "world_model/state_spec.py",
+      "cls": "StateSpecCfg",
+      "key": "err_scale",
+      "upstream": [
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        0.1,
+        2.0
+      ],
+      "local": [
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        0.1,
+        2.0
+      ],
+      "match": true
+    },
+    {
+      "source": "world_model/state_spec.py",
+      "cls": "StateSpecCfg",
+      "key": "out_scale",
+      "upstream": [
+        0.3,
+        0.5,
+        2.0,
+        0.01,
+        0.02,
+        0.02
+      ],
+      "local": [
+        0.3,
+        0.5,
+        2.0,
+        0.01,
+        0.02,
+        0.02
+      ],
+      "match": true
+    },
+    {
+      "source": "world_model/state_spec.py",
+      "cls": "StateSpecCfg",
+      "key": "in_scale",
+      "upstream": [
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        5.0
+      ],
+      "local": [
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        5.0
+      ],
+      "match": true
+    },
+    {
+      "source": "world_model/state_spec.py",
+      "cls": "StateSpecCfg",
+      "key": "explicit_integration",
+      "upstream": true,
+      "local": true,
+      "match": true
+    },
+    {
+      "source": "world_model/world_model.py",
+      "cls": "WorldModelCfg",
+      "key": "hidden",
+      "upstream": [
+        2048,
+        2048,
+        2048
+      ],
+      "local": [
+        2048,
+        2048,
+        2048
+      ],
+      "match": true
+    },
+    {
+      "source": "world_model/world_model.py",
+      "cls": "WorldModelCfg",
+      "key": "term_hidden",
+      "upstream": [
+        64,
+        64
+      ],
+      "local": [
+        64,
+        64
+      ],
+      "match": true
+    },
+    {
+      "source": "world_model/world_model.py",
+      "cls": "WorldModelCfg",
+      "key": "term_loss_weight",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "world_model/world_model.py",
+      "cls": "WorldModelCfg",
+      "key": "height_threshold",
+      "upstream": 0.25,
+      "local": 0.25,
+      "match": true
+    },
+    {
+      "source": "world_model/world_model.py",
+      "cls": "WorldModelCfg",
+      "key": "tilt_threshold",
+      "upstream": 0.8,
+      "local": 0.8,
+      "match": true
+    },
+    {
+      "source": "world_model/wm_trainer.py",
+      "cls": "WMTrainerCfg",
+      "key": "window",
+      "upstream": 8,
+      "local": 8,
+      "match": true
+    },
+    {
+      "source": "world_model/wm_trainer.py",
+      "cls": "WMTrainerCfg",
+      "key": "batches_per_update",
+      "upstream": 10,
+      "local": 10,
+      "match": true
+    },
+    {
+      "source": "world_model/wm_trainer.py",
+      "cls": "WMTrainerCfg",
+      "key": "batch_size",
+      "upstream": 2048,
+      "local": 2048,
+      "match": true
+    },
+    {
+      "source": "world_model/wm_trainer.py",
+      "cls": "WMTrainerCfg",
+      "key": "lr",
+      "upstream": 0.0002,
+      "local": 0.0002,
+      "match": true
+    },
+    {
+      "source": "world_model/wm_trainer.py",
+      "cls": "WMTrainerCfg",
+      "key": "grad_clip",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "world_model/wm_trainer.py",
+      "cls": "WMTrainerCfg",
+      "key": "weight_decay",
+      "upstream": 0.0,
+      "local": 0.0,
+      "match": true
+    },
+    {
+      "source": "world_model/wm_trainer.py",
+      "cls": "WMTrainerCfg",
+      "key": "compile",
+      "upstream": "default",
+      "local": "default",
+      "match": true
+    },
+    {
+      "source": "policy/nets.py",
+      "cls": "PolicyCfg",
+      "key": "encoder_hidden",
+      "upstream": [
+        2048,
+        1024,
+        512,
+        256
+      ],
+      "local": [
+        2048,
+        1024,
+        512,
+        256
+      ],
+      "match": true
+    },
+    {
+      "source": "policy/nets.py",
+      "cls": "PolicyCfg",
+      "key": "decoder_hidden",
+      "upstream": [
+        2048,
+        1024,
+        512,
+        256
+      ],
+      "local": [
+        2048,
+        1024,
+        512,
+        256
+      ],
+      "match": true
+    },
+    {
+      "source": "policy/nets.py",
+      "cls": "PolicyCfg",
+      "key": "history",
+      "upstream": 10,
+      "local": 10,
+      "match": true
+    },
+    {
+      "source": "policy/nets.py",
+      "cls": "PolicyCfg",
+      "key": "obs_term_scale",
+      "upstream": [
+        1.0,
+        5.0,
+        2.0,
+        1.0,
+        1.0
+      ],
+      "local": [
+        1.0,
+        5.0,
+        2.0,
+        1.0,
+        1.0
+      ],
+      "match": true
+    },
+    {
+      "source": "policy/nets.py",
+      "cls": "PolicyCfg",
+      "key": "goal_term_scale",
+      "upstream": [
+        1.0,
+        5.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0
+      ],
+      "local": [
+        1.0,
+        5.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0
+      ],
+      "match": true
+    },
+    {
+      "source": "policy/nets.py",
+      "cls": "PolicyCfg",
+      "key": "decoder_last_gain",
+      "upstream": 0.01,
+      "local": 0.01,
+      "match": true
+    },
+    {
+      "source": "policy/nets.py",
+      "cls": "CriticCfg",
+      "key": "hidden",
+      "upstream": [
+        256,
+        128
+      ],
+      "local": [
+        256,
+        128
+      ],
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "horizon",
+      "upstream": 32,
+      "local": 32,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "batch_size",
+      "upstream": 4096,
+      "local": 4096,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "history",
+      "upstream": 10,
+      "local": 10,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "future_frames",
+      "upstream": 10,
+      "local": 10,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "gamma",
+      "upstream": 0.99,
+      "local": 0.99,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "gae_lambda",
+      "upstream": 0.95,
+      "local": 0.95,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "lr",
+      "upstream": 0.0002,
+      "local": 0.0002,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "betas",
+      "upstream": [
+        0.9,
+        0.95
+      ],
+      "local": [
+        0.9,
+        0.95
+      ],
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "grad_clip_norm",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "grad_clip_value",
+      "upstream": 0.1,
+      "local": 0.1,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "critic_lr",
+      "upstream": 0.0002,
+      "local": 0.0002,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "critic_grad_clip",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "critic_epochs",
+      "upstream": 5,
+      "local": 5,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "critic_minibatches",
+      "upstream": 4,
+      "local": 4,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "use_critic",
+      "upstream": true,
+      "local": true,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "obs_noise",
+      "upstream": true,
+      "local": true,
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "compile",
+      "upstream": "default",
+      "local": "default",
+      "match": true
+    },
+    {
+      "source": "imagination/policy_trainer.py",
+      "cls": "PolicyTrainerCfg",
+      "key": "anchor_obs",
+      "upstream": false,
+      "local": false,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "std_body_pos",
+      "upstream": 0.3,
+      "local": 0.3,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "std_body_ori",
+      "upstream": 0.4,
+      "local": 0.4,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "std_body_lin_vel",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "std_body_ang_vel",
+      "upstream": 3.14,
+      "local": 3.14,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "std_root_pos",
+      "upstream": 0.3,
+      "local": 0.3,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "std_root_ori",
+      "upstream": 0.4,
+      "local": 0.4,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "w_body_pos",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "w_body_ori",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "w_body_lin_vel",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "w_body_ang_vel",
+      "upstream": 1.0,
+      "local": 1.0,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "w_root_pos",
+      "upstream": 0.5,
+      "local": 0.5,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "w_root_ori",
+      "upstream": 0.5,
+      "local": 0.5,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "w_action_rate",
+      "upstream": -0.1,
+      "local": -0.1,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "w_joint_limit",
+      "upstream": -2.0,
+      "local": -2.0,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/rewards.py",
+      "cls": "TrackingRewardCfg",
+      "key": "dt",
+      "upstream": 0.02,
+      "local": 0.02,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "root_body_name",
+      "upstream": "pelvis",
+      "local": "pelvis",
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "entity_name",
+      "upstream": "robot",
+      "local": "robot",
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "future_frames",
+      "upstream": 10,
+      "local": 10,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "bin_frames",
+      "upstream": 50,
+      "local": 50,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "joint_position_range",
+      "upstream": [
+        0.0,
+        0.0
+      ],
+      "local": [
+        0.0,
+        0.0
+      ],
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "sampling_mode",
+      "upstream": "return",
+      "local": "return",
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "uniform_ratio",
+      "upstream": 0.5,
+      "local": 0.5,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "hard_ratio",
+      "upstream": 0.4,
+      "local": 0.4,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "memory_ratio",
+      "upstream": 0.1,
+      "local": 0.1,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "softmax_temp",
+      "upstream": 25.0,
+      "local": 25.0,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "g_max",
+      "upstream": 10.0,
+      "local": 10.0,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "gamma",
+      "upstream": 0.99,
+      "local": 0.99,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "ema_alpha",
+      "upstream": 0.05,
+      "local": 0.05,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "memory_alpha",
+      "upstream": 0.01,
+      "local": 0.01,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "min_remaining_steps",
+      "upstream": 100,
+      "local": 100,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "max_logged_steps",
+      "upstream": 1024,
+      "local": 1024,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "compact_library",
+      "upstream": false,
+      "local": false,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "library_fp16",
+      "upstream": true,
+      "local": true,
+      "match": true
+    },
+    {
+      "source": "envs/mdp/commands.py",
+      "cls": "MultiClipMotionCommandCfg",
+      "key": "resampling_time_range",
+      "upstream": [
+        1000000000.0,
+        1000000000.0
+      ],
+      "local": [
+        1000000000.0,
+        1000000000.0
+      ],
+      "match": true
+    }
+  ],
+  "reward": {
+    "std_body_pos": 0.3,
+    "std_body_ori": 0.4,
+    "std_body_lin_vel": 1.0,
+    "std_body_ang_vel": 3.14,
+    "std_root_pos": 0.3,
+    "std_root_ori": 0.4,
+    "w_body_pos": 1.0,
+    "w_body_ori": 1.0,
+    "w_body_lin_vel": 1.0,
+    "w_body_ang_vel": 1.0,
+    "w_root_pos": 0.5,
+    "w_root_ori": 0.5,
+    "w_action_rate": -0.1,
+    "w_joint_limit": -2.0,
+    "dt": 0.02
+  },
+  "scope": "Pinned source defaults, not all saved e8 runtime overrides. Dimension-dependent fields adapted to native23.",
+  "architecture_choices": {
+    "activation": "SiLU",
+    "latent_activation": "tanh",
+    "dynamics_last_layer": "zero weights and bias",
+    "decoder_last_layer": "orthogonal gain 0.01, zero bias",
+    "wm_loss": "mean over batch, sum over 58 scaled error components, mean over k; BCE weight 1",
+    "actor_loss": "negative survival-weighted bootstrapped objective divided by horizon"
+  },
+  "known_differences": {
+    "native_dof": 23,
+    "reference_fps": 50,
+    "actor_batch_per_rank": 4096,
+    "upstream_e8_actor_batch_per_rank": 2048,
+    "gpus": 2,
+    "upstream_e8_gpus": 4,
+    "future_window": "t+1..t+10",
+    "reward_anchor": "pelvis"
+  },
+  "config_change": "Made implicit defaults explicit; resolved training values are unchanged.",
+  "mlp_initialization_and_activation_ast_match": true,
+  "verification": "Resolved configs unchanged; MLP constructor AST identical; training configuration and state representation tests: 4 passed."
+}

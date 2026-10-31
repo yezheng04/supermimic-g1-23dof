@@ -1,0 +1,106 @@
+{
+  "reference": {
+    "repo": "NVlabs/GR00T-WholeBodyControl",
+    "commit": "1fa5f7fa3966cbd4845c4e641d13c3f0cd5b0d9b"
+  },
+  "reference_script_sha256": "b6b50d441a4876a382eb3ff33ba940c487d1647230b5ecacaa37cfcf521258da",
+  "exclude_keywords": [
+    "bed",
+    "bike",
+    "chair",
+    "climb",
+    "com_up_50cm",
+    "sitting",
+    "step_on",
+    "seat",
+    "table",
+    "_sit_",
+    "sit_",
+    "ladder",
+    "crutch",
+    "_bed_",
+    "_ride_",
+    "scooter",
+    "stepdown",
+    "acrobatics_",
+    "box_HSPU",
+    "cartwheel",
+    "50cm_box_",
+    "on_box",
+    "fall_from",
+    "handstand_ff_",
+    "on_1m",
+    "form_box",
+    "off_1m",
+    "230m",
+    "jump_over_obstacle_",
+    "lift_crate_come_up_",
+    "jump_to_shoulder_roll",
+    "kozak_dance",
+    "stair",
+    "handstand",
+    "box_jump",
+    "monkey_jump",
+    "safety_roll",
+    "box_dips",
+    "walking_on_edge",
+    "push_obstacle"
+  ],
+  "output_fps": 50,
+  "quality_gate": {
+    "max_joint_limit_excess_rad": 1e-05,
+    "max_self_collision_frames_2mm": 0,
+    "max_foot_penetration_frames_2cm": 0
+  },
+  "pilot_per_package": 8,
+  "minimum_pilot_pass_fraction": 0.1,
+  "note": "SONIC base keywords plus Appendix E example-derived name additions and published geometry thresholds. Missing author keyword list and gate details are explicit local choices. Additional native23 quality gate and pilot stop remain separate. No target clip count or dynamic certification.",
+  "appendix_e_name_rules": [
+    {
+      "term": "box",
+      "pattern": "(^|_)box(_|$)"
+    },
+    {
+      "term": "jump_off_50cm",
+      "pattern": "(^|_)jump_off_50cm(_|$)"
+    },
+    {
+      "term": "look_over_fence",
+      "pattern": "(^|_)look_over_fence(_|$)"
+    }
+  ],
+  "appendix_e_name_note": "Additions inferred from the explicit examples in Appendix E, not the unpublished full author keyword list. Lowercase and normalize spaces/hyphens to underscores. Token boundaries avoid boxing and position false positives. Existing SONIC keyword matches are retained.",
+  "appendix_e_geometry": {
+    "elevated_height_m": 0.2,
+    "elevated_duration_s": 0.6,
+    "penetration_hard_m": -0.12,
+    "penetration_soft_m": -0.08,
+    "penetration_soft_fraction": 0.8,
+    "floating_foot_height_m": 0.02,
+    "floating_duration_s": 0.5,
+    "floating_gate_local": {
+      "upright_cos_min": 0.9,
+      "pelvis_height_range_m": [
+        0.6,
+        0.85
+      ],
+      "pelvis_speed_max_m_s": 0.1,
+      "pelvis_angular_speed_max_rad_s": 0.5,
+      "joint_speed_rms_max_rad_s": 0.5
+    },
+    "floating_gate_note": "These numeric posture and stationarity gates are local choices, not specified in Appendix E. Height, root linear speed, joint RMS and upright defaults follow the existing Cuboi/Kang reproduction choices; pelvis angular speed guard is added locally. Body-link set is all nonworld native23 bodies.",
+    "duration_note": "Consecutive sample count / fps, matching discrete control-interval counting; author off-by-one convention unpublished."
+  },
+  "paper_reference": {
+    "url": "https://arxiv.org/pdf/2610.28480",
+    "version": "v1",
+    "appendix": "E",
+    "reported_counts": {
+      "raw": 142220,
+      "after_name_filter": 129667,
+      "after_feasibility_filter": 129514
+    }
+  },
+  "native23_quality_mode": "diagnostic",
+  "quality_gate_note": "User-selected policy: retain native23 metrics as diagnostics only. Final keep is decided by Appendix E; schema, timebase and finite-value validation still must pass. The 10 percent pilot stop applies only in optional strict mode."
+}

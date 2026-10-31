@@ -1,0 +1,99 @@
+{
+  "num_initialization_frames": 10,
+  "num_stabilization_frames": 5,
+  "ik_iterations": 24,
+  "joint_limit_weight": 10.0,
+  "smooth_joint_filter_weight": 0.0,
+  "enable_post_processing": true,
+  "enable_contact_processing": true,
+  "human_robot_scaler_config": "configs/scaler.json",
+  "post_processing": {
+    "robot_config": "configs/post_processing.json"
+  },
+  "ik_match_table": {
+    "Hips": {
+      "t_body": "pelvis",
+      "r_body": "pelvis",
+      "t_weight": 50.0,
+      "r_weight": 10.0
+    },
+    "Chest": {
+      "t_body": "torso_link",
+      "r_body": "torso_link",
+      "t_weight": 0.7,
+      "r_weight": 1.5
+    },
+    "LeftArm": {
+      "t_body": "left_shoulder_roll_link",
+      "r_body": "left_shoulder_roll_link",
+      "t_weight": 1.5,
+      "r_weight": 0.15
+    },
+    "LeftForeArm": {
+      "t_body": "left_elbow_link",
+      "r_body": "left_elbow_link",
+      "t_weight": 1.0,
+      "r_weight": 1.0
+    },
+    "LeftHand": {
+      "t_body": "left_wrist_roll_rubber_hand",
+      "r_body": "left_wrist_roll_rubber_hand",
+      "t_weight": 2.0,
+      "r_weight": 1.2
+    },
+    "RightArm": {
+      "t_body": "right_shoulder_roll_link",
+      "r_body": "right_shoulder_roll_link",
+      "t_weight": 1.5,
+      "r_weight": 0.15
+    },
+    "RightForeArm": {
+      "t_body": "right_elbow_link",
+      "r_body": "right_elbow_link",
+      "t_weight": 1.0,
+      "r_weight": 1.0
+    },
+    "RightHand": {
+      "t_body": "right_wrist_roll_rubber_hand",
+      "r_body": "right_wrist_roll_rubber_hand",
+      "t_weight": 2.0,
+      "r_weight": 1.2
+    },
+    "LeftLeg": {
+      "t_body": "left_hip_roll_link",
+      "r_body": "left_hip_roll_link",
+      "t_weight": 1.5,
+      "r_weight": 0.15
+    },
+    "LeftShin": {
+      "t_body": "left_knee_link",
+      "r_body": "left_knee_link",
+      "t_weight": 1.0,
+      "r_weight": 1.0
+    },
+    "LeftFoot": {
+      "t_body": "left_ankle_roll_link",
+      "r_body": "left_ankle_roll_link",
+      "t_weight": 30.0,
+      "r_weight": 2.0
+    },
+    "RightLeg": {
+      "t_body": "right_hip_roll_link",
+      "r_body": "right_hip_roll_link",
+      "t_weight": 1.5,
+      "r_weight": 0.15
+    },
+    "RightShin": {
+      "t_body": "right_knee_link",
+      "r_body": "right_knee_link",
+      "t_weight": 1.0,
+      "r_weight": 1.0
+    },
+    "RightFoot": {
+      "t_body": "right_ankle_roll_link",
+      "r_body": "right_ankle_roll_link",
+      "t_weight": 30.0,
+      "r_weight": 2.0
+    }
+  }
+}

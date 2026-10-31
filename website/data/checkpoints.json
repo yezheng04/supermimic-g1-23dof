@@ -1,0 +1,482 @@
+[
+  {
+    "iteration": 80000,
+    "groups": {
+      "uniform": {
+        "clips": 2000,
+        "failed": 4,
+        "mean_norm_return": 0.8688161925757922
+      },
+      "push_up": {
+        "clips": 72,
+        "failed": 0,
+        "mean_norm_return": 0.7548756604298156
+      },
+      "inchworm": {
+        "clips": 22,
+        "failed": 19,
+        "mean_norm_return": 0.44580251178735214
+      },
+      "elbow_plank": {
+        "clips": 24,
+        "failed": 1,
+        "mean_norm_return": 0.8053808135957691
+      },
+      "crawl": {
+        "clips": 128,
+        "failed": 0,
+        "mean_norm_return": 0.7557971192837731
+      },
+      "flip": {
+        "clips": 54,
+        "failed": 54,
+        "mean_norm_return": 0.29396313704110416
+      },
+      "side_roll": {
+        "clips": 21,
+        "failed": 21,
+        "mean_norm_return": 0.19232300767942329
+      },
+      "broad_jump": {
+        "clips": 24,
+        "failed": 2,
+        "mean_norm_return": 0.6803069781665639
+      },
+      "lying_recovery": {
+        "clips": 54,
+        "failed": 37,
+        "mean_norm_return": 0.3689473758784297
+      },
+      "long_duration": {
+        "clips": 64,
+        "failed": 2,
+        "mean_norm_return": 0.8622202475695514
+      },
+      "challenge_union": {
+        "clips": 462,
+        "failed": 135,
+        "mean_norm_return": 0.6308866680056846
+      }
+    }
+  },
+  {
+    "iteration": 104000,
+    "groups": {
+      "uniform": {
+        "clips": 2000,
+        "failed": 3,
+        "mean_norm_return": 0.7744891108459279
+      },
+      "push_up": {
+        "clips": 72,
+        "failed": 0,
+        "mean_norm_return": 0.7432094274199864
+      },
+      "inchworm": {
+        "clips": 22,
+        "failed": 2,
+        "mean_norm_return": 0.6620115581144208
+      },
+      "elbow_plank": {
+        "clips": 24,
+        "failed": 0,
+        "mean_norm_return": 0.8386956467072636
+      },
+      "crawl": {
+        "clips": 128,
+        "failed": 0,
+        "mean_norm_return": 0.7429655609136135
+      },
+      "flip": {
+        "clips": 54,
+        "failed": 54,
+        "mean_norm_return": 0.2712676181247915
+      },
+      "side_roll": {
+        "clips": 21,
+        "failed": 21,
+        "mean_norm_return": 0.18272694338283085
+      },
+      "broad_jump": {
+        "clips": 24,
+        "failed": 0,
+        "mean_norm_return": 0.6536693033572457
+      },
+      "lying_recovery": {
+        "clips": 54,
+        "failed": 28,
+        "mean_norm_return": 0.3747596956936365
+      },
+      "long_duration": {
+        "clips": 64,
+        "failed": 2,
+        "mean_norm_return": 0.7344129933109234
+      },
+      "challenge_union": {
+        "clips": 462,
+        "failed": 106,
+        "mean_norm_return": 0.6160537349379662
+      }
+    }
+  },
+  {
+    "iteration": 112000,
+    "groups": {
+      "uniform": {
+        "clips": 2000,
+        "failed": 246,
+        "mean_norm_return": 0.20802448084740077
+      },
+      "push_up": {
+        "clips": 72,
+        "failed": 49,
+        "mean_norm_return": 0.2698213496781064
+      },
+      "inchworm": {
+        "clips": 22,
+        "failed": 22,
+        "mean_norm_return": 0.080387597749493
+      },
+      "elbow_plank": {
+        "clips": 24,
+        "failed": 20,
+        "mean_norm_return": 0.19305457323786213
+      },
+      "crawl": {
+        "clips": 128,
+        "failed": 10,
+        "mean_norm_return": 0.557422962201072
+      },
+      "flip": {
+        "clips": 54,
+        "failed": 54,
+        "mean_norm_return": 0.06044088061698018
+      },
+      "side_roll": {
+        "clips": 21,
+        "failed": 21,
+        "mean_norm_return": 0.06849486796853146
+      },
+      "broad_jump": {
+        "clips": 24,
+        "failed": 14,
+        "mean_norm_return": 0.11969572359540054
+      },
+      "lying_recovery": {
+        "clips": 54,
+        "failed": 52,
+        "mean_norm_return": 0.13239648835521814
+      },
+      "long_duration": {
+        "clips": 64,
+        "failed": 10,
+        "mean_norm_return": 0.1901011685075149
+      },
+      "challenge_union": {
+        "clips": 462,
+        "failed": 251,
+        "mean_norm_return": 0.26845689783695414
+      }
+    }
+  },
+  {
+    "iteration": 120000,
+    "groups": {
+      "uniform": {
+        "clips": 2000,
+        "failed": 3,
+        "mean_norm_return": 0.8028215597074018
+      },
+      "push_up": {
+        "clips": 72,
+        "failed": 2,
+        "mean_norm_return": 0.7026693580260089
+      },
+      "inchworm": {
+        "clips": 22,
+        "failed": 15,
+        "mean_norm_return": 0.5437701005020971
+      },
+      "elbow_plank": {
+        "clips": 24,
+        "failed": 0,
+        "mean_norm_return": 0.8224012227294001
+      },
+      "crawl": {
+        "clips": 128,
+        "failed": 0,
+        "mean_norm_return": 0.7208406143608821
+      },
+      "flip": {
+        "clips": 54,
+        "failed": 54,
+        "mean_norm_return": 0.26598202820597194
+      },
+      "side_roll": {
+        "clips": 21,
+        "failed": 21,
+        "mean_norm_return": 0.18053351780179533
+      },
+      "broad_jump": {
+        "clips": 24,
+        "failed": 2,
+        "mean_norm_return": 0.5476073833279642
+      },
+      "lying_recovery": {
+        "clips": 54,
+        "failed": 40,
+        "mean_norm_return": 0.27392566170301985
+      },
+      "long_duration": {
+        "clips": 64,
+        "failed": 2,
+        "mean_norm_return": 0.7674994325855732
+      },
+      "challenge_union": {
+        "clips": 462,
+        "failed": 135,
+        "mean_norm_return": 0.5837135854206323
+      }
+    }
+  },
+  {
+    "iteration": 128000,
+    "groups": {
+      "uniform": {
+        "clips": 2000,
+        "failed": 8,
+        "mean_norm_return": 0.6240708220296007
+      },
+      "push_up": {
+        "clips": 72,
+        "failed": 0,
+        "mean_norm_return": 0.6712207101729659
+      },
+      "inchworm": {
+        "clips": 22,
+        "failed": 4,
+        "mean_norm_return": 0.5087897367710085
+      },
+      "elbow_plank": {
+        "clips": 24,
+        "failed": 0,
+        "mean_norm_return": 0.8007328522605365
+      },
+      "crawl": {
+        "clips": 128,
+        "failed": 0,
+        "mean_norm_return": 0.7132780612583767
+      },
+      "flip": {
+        "clips": 54,
+        "failed": 54,
+        "mean_norm_return": 0.24151590147206684
+      },
+      "side_roll": {
+        "clips": 21,
+        "failed": 21,
+        "mean_norm_return": 0.17075704738965425
+      },
+      "broad_jump": {
+        "clips": 24,
+        "failed": 2,
+        "mean_norm_return": 0.4690691364425474
+      },
+      "lying_recovery": {
+        "clips": 54,
+        "failed": 36,
+        "mean_norm_return": 0.2410778997711804
+      },
+      "long_duration": {
+        "clips": 64,
+        "failed": 1,
+        "mean_norm_return": 0.5498692266136402
+      },
+      "challenge_union": {
+        "clips": 462,
+        "failed": 117,
+        "mean_norm_return": 0.5325898997506251
+      }
+    }
+  },
+  {
+    "iteration": 140000,
+    "groups": {
+      "uniform": {
+        "clips": 2000,
+        "failed": 31,
+        "mean_norm_return": 0.4029141673558369
+      },
+      "push_up": {
+        "clips": 72,
+        "failed": 14,
+        "mean_norm_return": 0.5111853902474216
+      },
+      "inchworm": {
+        "clips": 22,
+        "failed": 22,
+        "mean_norm_return": 0.15091242076032615
+      },
+      "elbow_plank": {
+        "clips": 24,
+        "failed": 4,
+        "mean_norm_return": 0.6183427243925186
+      },
+      "crawl": {
+        "clips": 128,
+        "failed": 3,
+        "mean_norm_return": 0.6582638335608177
+      },
+      "flip": {
+        "clips": 54,
+        "failed": 54,
+        "mean_norm_return": 0.15616887600910673
+      },
+      "side_roll": {
+        "clips": 21,
+        "failed": 21,
+        "mean_norm_return": 0.13303654724649755
+      },
+      "broad_jump": {
+        "clips": 24,
+        "failed": 5,
+        "mean_norm_return": 0.3035085094702835
+      },
+      "lying_recovery": {
+        "clips": 54,
+        "failed": 46,
+        "mean_norm_return": 0.173064897606773
+      },
+      "long_duration": {
+        "clips": 64,
+        "failed": 1,
+        "mean_norm_return": 0.37567106378755705
+      },
+      "challenge_union": {
+        "clips": 462,
+        "failed": 169,
+        "mean_norm_return": 0.41354492390517644
+      }
+    }
+  },
+  {
+    "iteration": 152000,
+    "groups": {
+      "uniform": {
+        "clips": 2000,
+        "failed": 8,
+        "mean_norm_return": 0.8298922627917259
+      },
+      "push_up": {
+        "clips": 72,
+        "failed": 0,
+        "mean_norm_return": 0.7503708519080199
+      },
+      "inchworm": {
+        "clips": 22,
+        "failed": 12,
+        "mean_norm_return": 0.531424435640863
+      },
+      "elbow_plank": {
+        "clips": 24,
+        "failed": 0,
+        "mean_norm_return": 0.7881464639426644
+      },
+      "crawl": {
+        "clips": 128,
+        "failed": 0,
+        "mean_norm_return": 0.722506143824762
+      },
+      "flip": {
+        "clips": 54,
+        "failed": 54,
+        "mean_norm_return": 0.267278494334391
+      },
+      "side_roll": {
+        "clips": 21,
+        "failed": 21,
+        "mean_norm_return": 0.1839718536205928
+      },
+      "broad_jump": {
+        "clips": 24,
+        "failed": 2,
+        "mean_norm_return": 0.6165526756886094
+      },
+      "lying_recovery": {
+        "clips": 54,
+        "failed": 28,
+        "mean_norm_return": 0.39765065132778915
+      },
+      "long_duration": {
+        "clips": 64,
+        "failed": 1,
+        "mean_norm_return": 0.8167009458203621
+      },
+      "challenge_union": {
+        "clips": 462,
+        "failed": 117,
+        "mean_norm_return": 0.6143938665088524
+      }
+    }
+  },
+  {
+    "iteration": 156000,
+    "groups": {
+      "uniform": {
+        "clips": 2000,
+        "failed": 9,
+        "mean_norm_return": 0.5629680274485617
+      },
+      "push_up": {
+        "clips": 72,
+        "failed": 3,
+        "mean_norm_return": 0.6673973009967105
+      },
+      "inchworm": {
+        "clips": 22,
+        "failed": 10,
+        "mean_norm_return": 0.46132147737433143
+      },
+      "elbow_plank": {
+        "clips": 24,
+        "failed": 0,
+        "mean_norm_return": 0.7566241833839821
+      },
+      "crawl": {
+        "clips": 128,
+        "failed": 1,
+        "mean_norm_return": 0.7034885564010763
+      },
+      "flip": {
+        "clips": 54,
+        "failed": 54,
+        "mean_norm_return": 0.18759915680871228
+      },
+      "side_roll": {
+        "clips": 21,
+        "failed": 21,
+        "mean_norm_return": 0.1575655106690246
+      },
+      "broad_jump": {
+        "clips": 24,
+        "failed": 0,
+        "mean_norm_return": 0.5499778774690729
+      },
+      "lying_recovery": {
+        "clips": 54,
+        "failed": 37,
+        "mean_norm_return": 0.2662640891860273
+      },
+      "long_duration": {
+        "clips": 64,
+        "failed": 1,
+        "mean_norm_return": 0.5599598370314769
+      },
+      "challenge_union": {
+        "clips": 462,
+        "failed": 126,
+        "mean_norm_return": 0.526355549072128
+      }
+    }
+  }
+]

@@ -1,0 +1,252 @@
+{
+  "upstream": "https://github.com/CuboiLeo/SuperMimic-Reproduced",
+  "commit": "ba6105349069bf040f1fdad60873d13138d505a2",
+  "modules": [
+    {
+      "path": "src/supermimic/__init__.py",
+      "upstream_sha256": "125f22c257d97507d23ebfb893b5afc51031273f46c9dbbc079800df93064111",
+      "local_sha256": "125f22c257d97507d23ebfb893b5afc51031273f46c9dbbc079800df93064111",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/config.py",
+      "upstream_sha256": "a76ab80d738f2b706ea3f030a1a6fa2a4f44dfb4e6454224ed45d666f9ab3992",
+      "local_sha256": "269c8e56c789f4c7c309fc7045fae0ad8cd70cc02d4f717c3be38fbf2891ad13",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/data/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/data/motion_convert.py",
+      "upstream_sha256": "032047915b7dde7b348e72e5dca1529cee15d7259800d5d81144a5c9a82f5bc1",
+      "local_sha256": "63ff66e5dd93de7dca91f8a6aabdb360ee373037dc5171246ada2b11442fa165",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/data/recorder.py",
+      "upstream_sha256": "8f1b64cac80fca0a8fe548c0190eb1bfdd1b5f399c44f01d5e30b6e409d0784a",
+      "local_sha256": "32a3d8cfa3b0c5e4721ecc025adce2211cf5a3df9d7098b8bb2575b01359b7eb",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/data/replay_buffer.py",
+      "upstream_sha256": "561eb96e295d511b12a2db9e2dbb735a53c161f06f7af1372a2cd2edd02ea4cf",
+      "local_sha256": "5dad1edaf97563fa719840b468c1ad7035872a1822bafc3adc9d26b55ffc4fca",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/envs/__init__.py",
+      "upstream_sha256": "1489391ed86aefc970651989774178018a94a020830b711b2bbb9e3ac94c715d",
+      "local_sha256": "1489391ed86aefc970651989774178018a94a020830b711b2bbb9e3ac94c715d",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/envs/actions.py",
+      "upstream_sha256": "1aff867e972ba837cc66f61dced65aefc7a16430b21a9520c7a23423e7c97c24",
+      "local_sha256": "1aff867e972ba837cc66f61dced65aefc7a16430b21a9520c7a23423e7c97c24",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/commands.py",
+      "upstream_sha256": "8dfab184c80903a930133d9c632c9aa04a1e78a9c3b7e6547d9eda95e2310dc7",
+      "local_sha256": "62c8a6b92b23c52d77a887475dded6ab540d30ec7900364656cc2b9c9cf86971",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/motion_library.py",
+      "upstream_sha256": "359261b2330b8eb5961559e27ac105e053643c780a0ec91085354637c7ede966",
+      "local_sha256": "f6fad02d9c7210da9c36b0c1737f96a8e608e36b53d051b0c3dab1314d43e3bf",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/observations.py",
+      "upstream_sha256": "7783bc1715269b4c011a2492557716e2ed59a7de7869452a64d748c6e1e94cea",
+      "local_sha256": "deeb71efb26888a854f3e47c0bdf967d3126bb990c0e44d34e23bcd26930465b",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/rewards.py",
+      "upstream_sha256": "34f53e7164097427b93cb5da7cdea755597b61a4ae389801eea6ddf7401a7407",
+      "local_sha256": "33a7510acd4a54a48d37e39d571c9aaf20deae3d6daa3278d0c8b487cb47a9d4",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/envs/mdp/terminations.py",
+      "upstream_sha256": "6335cfe6995b69b3b38d3441b7caca8156bd3b7643d2b2d6691b22276cb7a9b0",
+      "local_sha256": "6335cfe6995b69b3b38d3441b7caca8156bd3b7643d2b2d6691b22276cb7a9b0",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/envs/sim_context.py",
+      "upstream_sha256": "9e4d05a5fc2e12453bfa4cb14aba936f32cd7935f5a093e4c9109c98b8e618d5",
+      "local_sha256": "2fe865f5970c2326fc986d470a84b607aee39466d3e342a41b79cfb7a6b92b45",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/envs/state_io.py",
+      "upstream_sha256": "59d119ec4c7bee6403d0f8dddc4237c8d8a32cc6054711afbb3ae7ff683fb4b6",
+      "local_sha256": "b66fcd726785a8a95ff2ef31e2402c44bd2e4f51885d2167748043bf0b8c8dc6",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/envs/tracking_env_cfg.py",
+      "upstream_sha256": "54c3bc7a81221b9e4e1a94935bed1040427af1b715ab46e33f10190403914404",
+      "local_sha256": "1e3d90c48aa4c89f21973ca88648b1aed57008bbf612b567ef3a044ab7b9a71e",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/eval/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/eval/benchmark.py",
+      "upstream_sha256": "81ab68c56d09864e6f4dc4ca1e5c56df16d4c81d1dd54570e05462a7f8b96940",
+      "local_sha256": "9a4556cc81b84e00324c72587300d34ac1f11ef7cc8c9c1ff47103a9098850e4",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/imagination/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/imagination/compiled.py",
+      "upstream_sha256": "83be5834e305714deb37d04cca08087ce7f8fe31981b95060f7a5ec4377f4be0",
+      "local_sha256": "83be5834e305714deb37d04cca08087ce7f8fe31981b95060f7a5ec4377f4be0",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/imagination/objective.py",
+      "upstream_sha256": "3c93ec24c0f26db7bd4d60c5da50bc4a4d711a70a72ba0c9dfc7b078f082f774",
+      "local_sha256": "3c93ec24c0f26db7bd4d60c5da50bc4a4d711a70a72ba0c9dfc7b078f082f774",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/imagination/policy_trainer.py",
+      "upstream_sha256": "f902e07d5fa7ba5d408c75c42ea9b89b99befcb5111f7757ad37373ace8055d8",
+      "local_sha256": "f98fe860aa9669e1cb4b96ea9838f89fa2cf5ece65bc5297825999decada6722",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/imagination/rollout.py",
+      "upstream_sha256": "f217001b4cc70114f0197d79833dd55c00170e67e6b6e16d070fb4e383448aac",
+      "local_sha256": "44626faba3edd50dd2bffcc82828a2265fed462ea271e53cfc7edb52b819ff06",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/kinematics/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/kinematics/g1_fk.py",
+      "upstream_sha256": "4635eea9db60cc1f0541a1ed480986392984dbf8e83802775bb3d53665a91657",
+      "local_sha256": "6bbb8c688503e6c8a3ca5f34a4019844f7801ff7bed8ca73b461e8ff5cb15950",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/kinematics/rotations.py",
+      "upstream_sha256": "e4120edd12b5fdf97a1927a6d4a14b392d2d2736308bb473f6ffa89219aa0c47",
+      "local_sha256": "e4120edd12b5fdf97a1927a6d4a14b392d2d2736308bb473f6ffa89219aa0c47",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/policy/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/policy/nets.py",
+      "upstream_sha256": "02e33aeaf0b371129f349223429682819868a831f4dac8dd834fdc848e57e471",
+      "local_sha256": "b569dfc9410928b3d28ad622ccdbde5be0581a38272bebcc34b13153e639ec13",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/scripts/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/scripts/train.py",
+      "upstream_sha256": "8afeeda3739bf2200b9bdf7b148442de19b1a0d07689a475734ae5ef744d72f2",
+      "local_sha256": "559dd3cad8bc7d989d8dbf7e8812c7f15fa85fc4bead0d26449dafba29a1a639",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/training/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/training/distributed.py",
+      "upstream_sha256": "ebf2d6d37ce6102f55941c0ab328c9deb4021964c46f7bd35a8bc1bb767f5a21",
+      "local_sha256": "ebf2d6d37ce6102f55941c0ab328c9deb4021964c46f7bd35a8bc1bb767f5a21",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/training/loop.py",
+      "upstream_sha256": "c06c3b7890279fc90af8a1fb1568268a2444e702667b0dda9c5647116c68b515",
+      "local_sha256": "ab86c267d610c674c7cd5cc8c228d7921feb26fe1c39cc44ccbfd4dfe4bee9fd",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/training/schedule.py",
+      "upstream_sha256": "3848bc4432d6f87bc81d93660dff0cbe7491122f4f0413c42808be27cef6c2ee",
+      "local_sha256": "3848bc4432d6f87bc81d93660dff0cbe7491122f4f0413c42808be27cef6c2ee",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/world_model/__init__.py",
+      "upstream_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "identical"
+    },
+    {
+      "path": "src/supermimic/world_model/dynamics.py",
+      "upstream_sha256": "ce21b40a69c6abddebd85e7e2f000fadfd37f9bebbdecd5d61510e1f68736cd7",
+      "local_sha256": "8e7c35c13e2de3d6e4985076d7307e115cb42b9008bbe5d915145416abd3568c",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/world_model/heads.py",
+      "upstream_sha256": "1af9d3e47e2914fc0ff4154ba0cb2c53413b75cebdb81eb4d3aeed8928582e22",
+      "local_sha256": "ba1488db7640276cf65b24309e479a66c3314be5167b7ca7a5313b088ac5a82a",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/world_model/state_spec.py",
+      "upstream_sha256": "5e2cbc177056f010a1f4df80d9a3b4cf3ec4b5e84f0ff6a2c05d195500019c72",
+      "local_sha256": "9ff1b21258c9d9d0d6ea9c1e2b852cd677467a2e99ba8d49dd0f3f9e43ae9b2e",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/world_model/wm_trainer.py",
+      "upstream_sha256": "e5014cbe41325d2f5578e4b702dd6f562c76b9fae5daafce0f2e737fa749d2c2",
+      "local_sha256": "04509985e4fca7e2210cac978ead260745130dd1ea3a67d904bd29ef6082d609",
+      "status": "adapted"
+    },
+    {
+      "path": "src/supermimic/world_model/world_model.py",
+      "upstream_sha256": "24a6157e285584fd1f8433360cc93b2c0b5fe68395fa46ccc4358109ce0e7ba2",
+      "local_sha256": "c3730cae41e4353ddba3c3a8b04f8a5d4018dfbff0bce2722c9f00657838edcb",
+      "status": "adapted"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "run_name": "bones_pilot_extended_v1",
+  "seed": 20261029,
+  "initialize_from": "logs/bones_pilot_v1/ckpt_latest.pt",
+  "data": {"npz_dir": "data/training/bones_seed_v4_split_v1/pilot_train"},
+  "env": {
+    "num_envs": 32,
+    "replay_capacity": 500,
+    "compact_library": true,
+    "paper_protocol": true,
+    "obs_noise": true,
+    "reset_noise": true,
+    "domain_randomization": true,
+    "sampling_mode": "return",
+    "action_noise_std": 0.1
+  },
+  "wm_trainer": {"window": 8, "batch_size": 32, "batches_per_update": 10, "compile": null},
+  "policy_trainer": {"horizon": 32, "batch_size": 8, "compile": null},
+  "schedule": {
+    "total_iterations": 320000,
+    "warmup_iterations": 100,
+    "updates_per_env_step": 0.4,
+    "log_interval": 50,
+    "checkpoint_interval": 200,
+    "max_hours": 0.1
+  }
+}

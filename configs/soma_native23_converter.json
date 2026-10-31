@@ -1,0 +1,12 @@
+{
+  "retarget_source": "soma",
+  "retarget_target": "g1_23dof_urdf_v1",
+  "retargeter": "Newton",
+  "retarget_source_facing_direction": "Mujoco",
+  "extra_robot_paths": [
+    "assets/robotics"
+  ],
+  "import_folder": "../SOMA-Retargeter-official/assets/motions/bvh",
+  "export_folder": "data/retargeted/soma_urdf_manual",
+  "batch_size": 1
+}

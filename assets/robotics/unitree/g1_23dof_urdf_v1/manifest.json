@@ -1,0 +1,10 @@
+{
+  "name": "g1_23dof_urdf_v1",
+  "desc": {
+    "urdf_path": "desc/g1_23dof_rev_1_0.urdf",
+    "urdf_offset": 0.7922728396952152
+  },
+  "retarget_configs": {
+    "soma": "configs/retargeter.json"
+  }
+}

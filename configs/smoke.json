@@ -1,0 +1,35 @@
+{
+  "run_name": "smoke",
+  "data": {
+    "npz_dir": "data/npz/demo"
+  },
+  "env": {
+    "num_envs": 8,
+    "replay_capacity": 96,
+    "paper_protocol": true,
+    "obs_noise": false,
+    "reset_noise": false,
+    "domain_randomization": false,
+    "sampling_mode": "start",
+    "action_noise_std": 0.0
+  },
+  "wm_trainer": {
+    "batch_size": 2,
+    "batches_per_update": 1,
+    "compile": null
+  },
+  "policy_trainer": {
+    "batch_size": 2,
+    "critic_epochs": 1,
+    "critic_minibatches": 2,
+    "obs_noise": false,
+    "compile": null
+  },
+  "schedule": {
+    "total_iterations": 41,
+    "warmup_iterations": 41,
+    "updates_per_env_step": 1.0,
+    "log_interval": 41,
+    "checkpoint_interval": 41
+  }
+}

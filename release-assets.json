@@ -1,0 +1,41 @@
+{
+  "repository": "yezheng04/supermimic-g1-23dof",
+  "tag": "v0.1.0-demo",
+  "assets": [
+    {
+      "name": "future-trail.mp4",
+      "path": "website/media/future-trail.mp4",
+      "kind": "video",
+      "bytes": 15288635,
+      "sha256": "fdd87caf1141aab778c693be9c28936c45882d14c65da368e278c546fa12cdc2"
+    },
+    {
+      "name": "world-model.mp4",
+      "path": "website/media/world-model.mp4",
+      "kind": "video",
+      "bytes": 14922280,
+      "sha256": "fc90fc480519b44020127be32129430a9368b1646726bc3beb93e9eb3da72895"
+    },
+    {
+      "name": "side-roll.mp4",
+      "path": "website/media/side-roll.mp4",
+      "kind": "video",
+      "bytes": 2696963,
+      "sha256": "9704b641b597946fa4188a9e3a2e042c8c85d99f4bce92060379de1b456badd6"
+    },
+    {
+      "name": "flips.mp4",
+      "path": "website/media/flips.mp4",
+      "kind": "video",
+      "bytes": 6465809,
+      "sha256": "e25a6971959d4ae6674398903c10cc2e282d1dc39ba805713f76cb3e94b199b2"
+    },
+    {
+      "name": "models_0080000.pt",
+      "path": "models/models_0080000.pt",
+      "kind": "model",
+      "bytes": 68088737,
+      "sha256": "9cb64ac98b576600289b68ce28d1ea710aa6a22b87a33d5a0ba6b6632e4ee585"
+    }
+  ]
+}
